@@ -1,0 +1,17 @@
+<tr class="user-list" id="versionID_<?php echo $wo['version']->id; ?>" data-user-id="<?php echo $wo['version']->id?>" data_selected="<?php echo $wo['version']->id?>">
+   <td><?php echo $wo['version']->id; ?></td>
+   <td><?php echo $wo['version']->version_number; ?></td>
+   <td><?php echo $wo['version']->type; ?></td>
+   <td>
+      <?php if($wo['version']->status == 0){?>
+         In active
+      <?php } else{?>
+         Active
+      <?php } ?>
+   </td>
+
+   <td>
+      <button onclick="getVersion('<?php echo $wo['version']->id;?>');" type="button" class="btn bg-info admn_table_btn">Edit</button>
+      <button onclick="Wo_DeleteVersion('<?php echo $wo['version']->id;?>','hide');" type="button" class="btn bg-danger admn_table_btn">Delete</button>
+   </td>
+</tr>

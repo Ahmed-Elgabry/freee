@@ -1,0 +1,59 @@
+<div class="user-fetch">
+	<div class="user-cover" style="background-image: url(<?php echo $wo['popover']['cover']?>);"></div>
+	<div class="valign tag_profile_popover">
+		<div class="user-avatar">
+			<img src="<?php echo $wo['popover']['avatar']; ?>" alt="<?php echo $wo['popover']['name']; ?>">
+		</div>
+		<div class="full_width">
+			<div class="user-name">
+				<a href="<?php echo $wo['popover']['url']; ?>" data-ajax="?link1=timeline&u=<?php echo $wo['popover']['username']?>"><?php echo $wo['popover']['name']; ?></a>
+				<?php if($wo['popover']['verified'] == 1) {   ?>
+					<span class="verified-color" title="<?php echo $wo['lang']['verified_user'];?>"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 512 512"><path d="m256 0c-141.164062 0-256 114.835938-256 256s114.835938 256 256 256 256-114.835938 256-256-114.835938-256-256-256zm0 0" fill="#2196f3"></path><path d="m385.75 201.75-138.667969 138.664062c-4.160156 4.160157-9.621093 6.253907-15.082031 6.253907s-10.921875-2.09375-15.082031-6.253907l-69.332031-69.332031c-8.34375-8.339843-8.34375-21.824219 0-30.164062 8.339843-8.34375 21.820312-8.34375 30.164062 0l54.25 54.25 123.585938-123.582031c8.339843-8.34375 21.820312-8.34375 30.164062 0 8.339844 8.339843 8.339844 21.820312 0 30.164062zm0 0" fill="#fff"></path></svg></span>
+				<?php } ?>
+			</div>
+			<div class="event_info_blocks">
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z"></path></svg> <?php echo Wo_CountPageLikes($wo['popover']['page_id']);?> <?php echo $wo['lang']['people_likes_this']; ?>
+				</div>
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 0 1-1.414 0l-9.9-9.9a1 1 0 0 1 0-1.414L10.9 2.1zm.707 2.122L3.828 12l8.486 8.485 7.778-7.778-1.06-7.425-7.425-1.06zm2.12 6.364a2 2 0 1 1 2.83-2.829 2 2 0 0 1-2.83 2.829z"></path></svg> <?php echo $wo['popover']['category'];?>
+				</div>
+			</div>
+			<div class="valign user-buttons">
+				<div class="user-button user-follow-button"><?php echo Wo_GetLikeButton($wo['popover']['page_id']); ?></div>
+				<?php  if(!empty($wo['popover']['contact_type']) && $wo['popover']['is_page_onwer'] == false) {  ?>
+				<span class="last_row">
+					<?php  if(!empty($wo['popover']['phone']) && $wo['popover']['contact_type'] === 'phone') {  ?>
+						<button class="btn btn-default btn-mat" style="background-color: #007bff;color:#fff" onclick="window.open('tel:<?php echo $wo['popover']['phone']?>');">
+							<svg xmlns="http://www.w3.org/2000/svg" style="fill: #FFFFFF;" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone" data-toggle="tooltip" title="<?php echo $wo['lang']['phone_number']; ?>">
+								<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+							</svg>
+							<!-- <span><?php echo $wo['popover']['phone']?></span> -->
+						</button>
+
+					<?php  }  ?>
+					
+					<!-- Add a click event to handle WhatsApp -->
+					<?php if(!empty($wo['popover']['whatsapp_number']) && $wo['popover']['contact_type'] === 'whatsapp' ) { ?>
+						<button class="btn btn-default btn-mat" style="background-color: #25D366;" onclick="window.open('https://wa.me/<?php echo $wo['popover']['whatsapp_number']?>', '_blank');" title="<?php echo $wo['lang']['whatsapp_number']; ?>">
+							<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="feather" width="50" height="50" viewBox="0 0 30 30" style="fill: #FFFFFF;">
+								<path d="M 15 3 C 8.373 3 3 8.373 3 15 C 3 17.251208 3.6323415 19.350068 4.7109375 21.150391 L 3.1074219 27 L 9.0820312 25.431641 C 10.829354 26.425062 12.84649 27 15 27 C 21.627 27 27 21.627 27 15 C 27 8.373 21.627 3 15 3 z M 10.892578 9.4023438 C 11.087578 9.4023438 11.287937 9.4011562 11.460938 9.4101562 C 11.674938 9.4151563 11.907859 9.4308281 12.130859 9.9238281 C 12.395859 10.509828 12.972875 11.979906 13.046875 12.128906 C 13.120875 12.277906 13.173313 12.453437 13.070312 12.648438 C 12.972312 12.848437 12.921344 12.969484 12.777344 13.146484 C 12.628344 13.318484 12.465078 13.532109 12.330078 13.662109 C 12.181078 13.811109 12.027219 13.974484 12.199219 14.271484 C 12.371219 14.568484 12.968563 15.542125 13.851562 16.328125 C 14.986562 17.342125 15.944188 17.653734 16.242188 17.802734 C 16.540187 17.951734 16.712766 17.928516 16.884766 17.728516 C 17.061766 17.533516 17.628125 16.864406 17.828125 16.566406 C 18.023125 16.268406 18.222188 16.319969 18.492188 16.417969 C 18.766188 16.515969 20.227391 17.235766 20.525391 17.384766 C 20.823391 17.533766 21.01875 17.607516 21.09375 17.728516 C 21.17075 17.853516 21.170828 18.448578 20.923828 19.142578 C 20.676828 19.835578 19.463922 20.505734 18.919922 20.552734 C 18.370922 20.603734 17.858562 20.7995 15.351562 19.8125 C 12.327563 18.6215 10.420484 15.524219 10.271484 15.324219 C 10.122484 15.129219 9.0605469 13.713906 9.0605469 12.253906 C 9.0605469 10.788906 9.8286563 10.071437 10.097656 9.7734375 C 10.371656 9.4754375 10.692578 9.4023438 10.892578 9.4023438 z"></path>
+							</svg>
+						</button>
+
+					<?php } ?>
+
+					<!-- Add a click event to handle website -->
+					<?php if(!empty($wo['popover']['website']) && $wo['popover']['contact_type'] === 'website') { ?>
+						<div class="page_info" style="display: inline-block; vertical-align: top;">
+								<button class="btn btn-default btn-mat" onclick="window.open('<?php echo $wo['popover']['website']?>', '_blank');" title="<?php echo $wo['lang']['website']; ?>">
+									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z"></path></svg>
+								</button>
+						</div>
+					<?php } ?>
+				</span>
+			<?php  }  ?>
+			</div>
+		</div>
+	</div>
+</div>

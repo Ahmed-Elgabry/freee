@@ -1,0 +1,242 @@
+<?php
+if ($pages && $page['home'])
+	$html = '';
+$thumbnailHtml = '';
+
+$reels = Wo_GetReelsHome();
+if (!function_exists('getVideoThumbnail')) {
+	function getVideoThumbnail($videoPath)
+	{
+		$thumbnailDir = 'thumbnails';
+		$thumbnailPath = $thumbnailDir . '/' . basename($videoPath) . '.jpg';
+
+		if (!file_exists($thumbnailPath)) {
+			$ffmpegCommand = "ffmpeg  -i $videoPath -an -ss 00:00:05 -vf scale=1080:1920 -vframes 1 -y $thumbnailPath 2>&1";
+			$ffmpegOutput = shell_exec($ffmpegCommand);
+
+			if ($ffmpegOutput !== null) {
+				error_log("FFmpeg error: $ffmpegOutput");
+				return '';
+			}
+		}
+
+		return $thumbnailPath;
+	}
+}
+
+
+foreach ($reels as $key => $storyId) {
+	$wo['story'] = Wo_PostData($storyId);
+	$thumbnailPath = getVideoThumbnail($wo['story']['postFile']);
+	$reelId =  $wo['config']['site_url'] . "/reels/" . $wo['story']['id'];
+	$avatarUrl = isset($wo['story']['publisher']['avatar']) ? $wo['story']['publisher']['avatar'] : '';
+	$thumbnailHtml .= '<a href="' . $reelId . '">';
+	$thumbnailHtml .= '<div class="story-item item" style="background-image:url(' . $thumbnailPath . ');">';
+	$thumbnailHtml .= '<div class="rounded" style="background-image: url(' . $avatarUrl . ');"></div>';
+	// $thumbnailHtml .= '<span>Your Content<span>';
+	$thumbnailHtml .= '</div>';
+	$thumbnailHtml .= '</a>';
+}
+
+?>
+
+<div class="post-container">
+	<div class="post">
+		<div class="panel panel-white panel-shadow">
+			<div class="valign post-heading">
+				<div class="valign">
+					<div class="image">
+						<i data-visualcompletion="css-img" class="x1b0d499 xep6ejk" style="background-image: url(&quot;https://static.xx.fbcdn.net/rsrc.php/v3/yR/r/33Hxs1Fsi4m.png&quot;); background-position: 0px 0px; background-size: auto; width: 24px; height: 24px; background-repeat: no-repeat; display: inline-block;"></i>
+					</div>
+					<div class="meta" style="font-size: larger;">
+						<?php echo $wo['lang']['reels_home_title'] ?> </div>
+				</div>
+			</div>
+			<div class="story owl-carousel owl-theme">
+				<?php echo $thumbnailHtml; ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	.story .owl-nav {
+		display: block;
+	}
+
+	.story .owl-item.active {
+		width: 284px !important;
+	}
+
+	.story .story-item {
+		height: 472px;
+		border-radius: 15px;
+		background: black;
+		width: 274px !important;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		color: white;
+		position: relative;
+		font-size: 13px;
+		margin-bottom: 20px;
+	}
+
+
+	.story .story-item:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: black;
+		opacity: .2;
+		border-radius: 15px;
+	}
+
+	.story .story-item span {
+		position: absolute;
+		bottom: 0;
+		padding: 10px 5px;
+		font-family: sans-serif;
+	}
+
+	/* .story .owl-stage {
+		right: 15px;
+	} */
+
+	.rounded {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		width: 32px;
+		height: 32px;
+		margin: 5px;
+		position: absolute;
+		border-radius: 50% !important;
+		border: 2px solid #3877e1;
+	}
+
+
+	.story .owl-dots {
+		display: none;
+	}
+
+	.story .owl-nav {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+
+	.story .owl-nav button {
+		background-color: #3e7fff;
+		color: gray;
+		font-size: 0;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 10px;
+		position: absolute;
+		top: 0;
+		font-weight: 400;
+	}
+
+
+	.story .owl-nav button.owl-prev {
+		top: -20px;
+		left: 10px;
+		background: #fff;
+		font-size: 0;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+
+	.story .owl-nav button.owl-prev::after {
+		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30' fill='gray' stroke='%23333' stroke-width='0' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M14.791 5.207 8 12l6.793 6.793a1 1 0 1 1-1.415 1.414l-7.5-7.5a1 1 0 0 1 0-1.414l7.5-7.5a1 1 0 1 1 1.415 1.414z'/%3E%3C/svg%3E");
+		width: 100%;
+		height: 100%;
+	}
+
+	.story .owl-nav button.owl-next {
+		top: -20px;
+		right: 10px;
+		background: #fff;
+		font-size: 0;
+		font-weight: 100;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+	}
+
+	.story .owl-nav button.owl-next::after {
+		content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='30' height='30' fill='gray' stroke='%23333' stroke-width='0' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.209 5.207 16 12l-6.791 6.793a1 1 0 1 0 1.415 1.414l7.5-7.5a1 1 0 0 0 0-1.414l-7.5-7.5a1 1 0 1 0-1.415 1.414z'/%3E%3C/svg%3E");
+		width: 100%;
+		height: 100%;
+	}
+
+	@media screen and (max-width:990px) {
+		.story .owl-nav {
+			display: none;
+		}
+
+		.story .owl-item.active {
+			width: 253px !important;
+		}
+
+		.story .story-item {
+			height: 435px;
+			width: 241px !important;
+		}
+	}
+</style>
+
+<script>
+	$(document).ready(function() {
+		var isRTL = $("html").attr("lang") === "ar";
+
+		$(".story").owlCarousel({
+			rtl: isRTL,
+			nav: true,
+			dots: false,
+			center: false,
+			items: 2,
+			// loop: true,
+
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 2
+				},
+				1000: {
+					items: 2
+				}
+			}
+
+		});
+
+		var storyItems = document.querySelectorAll('.story .story-item');
+
+		if (isRTL) {
+			storyItems.forEach(function(item) {
+				item.style.right = '18px';
+				item.style.left = 'auto';
+			});
+
+		} else {
+			storyItems.forEach(function(item) {
+				item.style.left = '18px';
+				item.style.right = 'auto';
+			});
+		}
+
+
+
+
+	});
+</script>

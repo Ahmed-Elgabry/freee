@@ -1,0 +1,8 @@
+{
+    "sql_db_host": "localhost",
+    "sql_db_user": "freedomsapp_main",
+    "sql_db_pass": "Main2024##",
+    "sql_db_name": "freedomsapp_main",
+    "site_url": "http://localhost/freedomapp/",
+    "purchase_code": "dc9f6f39-93ca-4fa6-86f6-5fa5c7359e0c"
+}

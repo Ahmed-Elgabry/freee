@@ -1,0 +1,11 @@
+#deny from all
+Options +FollowSymLinks -Indexes
+IndexIgnore *
+DirectoryIndex
+<IfModule mod_headers.c>
+ RequestHeader set X-Forwarded-Proto https
+</IfModule>
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+RewriteRule ^(.*)$ http://127.0.0.1:4000/$1 [P]
+</IfModule>
