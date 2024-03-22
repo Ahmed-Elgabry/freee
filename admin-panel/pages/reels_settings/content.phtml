@@ -185,10 +185,10 @@ else{
     $_GET['sort'] = 'DESC_i';
     $db->orderBy('id', 'DESC');
 } 
-$posts = $db->objectbuilder()->paginate(T_POSTS, $page);
+$posts = $db->where('is_reel','1')->objectbuilder()->paginate(T_POSTS, $page);
 
 if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
-  header("Location: " . Wo_LoadAdminLinkSettings('manage-posts'));
+  header("Location: " . Wo_LoadAdminLinkSettings('reels_settings'));
   exit();
 }
 
@@ -211,75 +211,6 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
     </div>
     <!-- Vertical Layout -->
     <div class="row">
-      <div class="col-md-3">
-          <div class="card">
-              <div class="card-body">
-                  <h6 class="card-title">TOTAL COMMENTS</h6>
-                  <div class="d-flex align-items-center mb-3">
-                      <div>
-                          <div class="avatar">
-                              <span class="avatar-title bg-primary-bright text-primary rounded-pill">
-                                  <i class="material-icons">comment</i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="font-weight-bold ml-1 font-size-30 ml-3"><?php echo Wo_CountAllData('comments'); ?></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card">
-              <div class="card-body">
-                  <h6 class="card-title">TOTAL LIKES</h6>
-                  <div class="d-flex align-items-center mb-3">
-                      <div>
-                          <div class="avatar">
-                              <span class="avatar-title bg-info-bright text-info rounded-pill">
-                                  <i class="material-icons">thumb_up</i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="font-weight-bold ml-1 font-size-30 ml-3"><?php echo Wo_CountPostData('likes'); ?></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card">
-              <div class="card-body">
-                  <h6 class="card-title">TOTAL WONDERS / DISLIKES</h6>
-                  <div class="d-flex align-items-center mb-3">
-                      <div>
-                          <div class="avatar">
-                              <span class="avatar-title bg-warning-bright text-warning rounded-pill">
-                                  <i class="material-icons">error</i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="font-weight-bold ml-1 font-size-30 ml-3"><?php echo Wo_CountPostData('wonders'); ?></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="col-md-3">
-          <div class="card">
-              <div class="card-body">
-                  <h6 class="card-title">TOTAL REPLIES</h6>
-                  <div class="d-flex align-items-center mb-3">
-                      <div>
-                          <div class="avatar">
-                              <span class="avatar-title bg-primary-bright text-primary rounded-pill">
-                                  <i class="material-icons">reply</i>
-                              </span>
-                          </div>
-                      </div>
-                      <div class="font-weight-bold ml-1 font-size-30 ml-3"><?php echo Wo_CountPostData('replies'); ?></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-        
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -293,16 +224,16 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
                                 echo 'All';
                             } ?>
                         </div>
-                  <h6 class="card-title">Manage & Edit Posts</h6>
+                  <h6 class="card-title">Manage & Edit Reels</h6>
                     <div class="row">
                       <div class="col-md-9" style="margin-bottom:0;">
-                        <form method="get" action="<?php echo Wo_LoadAdminLinkSettings('manage-posts'); ?>">
+                        <form method="get" action="<?php echo Wo_LoadAdminLinkSettings('reels_settings'); ?>">
                           <div class="row">
                             <div class="col-md-6">
                               <div class="form-group form-float">
                                   <div class="form-line">
                                     <label class="form-label search-form">
-                                        Search for post ID, post text.
+                                        Search for reel ID, reel text.
                                       </label>
                                       <input type="text" name="query" id="query" class="form-control" value="<?php echo($filter_keyword); ?>">
                                   </div>
@@ -329,23 +260,23 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
                              <th><input type="checkbox" id="check-all" class="filled-in check-all" ><label for="check-all"></label></th>
                              <th>ID 
                                   <?php if (!empty($_GET['sort']) && $_GET['sort'] == 'DESC_i') { ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=ASC_i") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=ASC_i") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
                                   <?php }else{ ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=DESC_i") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=DESC_i") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                                   <?php } ?></th>
                              <th>Publisher</th>
                              <th>Post Link</th>
                              <th>Posted 
                                   <?php if (!empty($_GET['sort']) && $_GET['sort'] == 'DESC_t') { ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=ASC_t") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=ASC_t") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
                                   <?php }else{ ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=DESC_t") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=DESC_t") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                                   <?php } ?></th>
                              <th>Status 
                                   <?php if (!empty($_GET['sort']) && $_GET['sort'] == 'DESC_a') { ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=ASC_a") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=ASC_a") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up cursor-p"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
                                   <?php }else{ ?>
-                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$sort_link."&sort=DESC_a") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                                      <svg onclick="location.href = '<?php echo(Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$sort_link."&sort=DESC_a") ?>'" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down cursor-p"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                                   <?php } ?></th>
                              <th>Action</th>
                             </tr>
@@ -368,7 +299,7 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
                                     $wo['story']->url = Wo_SeoLink('index.php?link1=post&id=' . $post->id);
                                 }
                                 
-                                echo Wo_LoadAdminPage('manage-posts/list');
+                                echo Wo_LoadAdminPage('reels_settings/list');
                               }
                             ?>
                             </tbody>
@@ -384,13 +315,13 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
                             <nav>
                                 <ul class="pagination">
                                     <li>
-                                      <a href="<?php echo Wo_LoadAdminLinkSettings('manage-posts?page-id=1').$link; ?>" data-ajax="?path=manage-posts&page-id=1<?php echo($link); ?>" class="waves-effect" title='First Page'>
+                                      <a href="<?php echo Wo_LoadAdminLinkSettings('reels_settings?page-id=1').$link; ?>" data-ajax="?path=reels_settings&page-id=1<?php echo($link); ?>" class="waves-effect" title='First Page'>
                                           <i class="material-icons">first_page</i>
                                       </a>
                                     </li>
                                     <?php if ($page > 1) {  ?>
                                       <li>
-                                          <a href="<?php echo Wo_LoadAdminLinkSettings('manage-posts?page-id=' . ($page - 1)).$link; ?>" data-ajax="?path=manage-posts&page-id=<?php echo($page - 1) ?><?php echo($link); ?>" class="waves-effect" title='Previous Page'>
+                                          <a href="<?php echo Wo_LoadAdminLinkSettings('reels_settings?page-id=' . ($page - 1)).$link; ?>" data-ajax="?path=reels_settings&page-id=<?php echo($page - 1) ?><?php echo($link); ?>" class="waves-effect" title='Previous Page'>
                                               <i class="material-icons">chevron_left</i>
                                           </a>
                                       </li>
@@ -404,7 +335,7 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
                                         if ($nums < 20) {
                                     ?>
                                       <li class="<?php echo ($page == $i) ? 'active' : ''; ?>">
-                                        <a href="<?php echo Wo_LoadAdminLinkSettings('manage-posts?page-id=' . ($i)).$link; ?>" data-ajax="?path=manage-posts&page-id=<?php echo($i) ?><?php echo($link); ?>" class="waves-effect">
+                                        <a href="<?php echo Wo_LoadAdminLinkSettings('reels_settings?page-id=' . ($i)).$link; ?>" data-ajax="?path=reels_settings&page-id=<?php echo($i) ?><?php echo($link); ?>" class="waves-effect">
                                           <?php echo $i ?>   
                                         </a>
                                       </li>
@@ -413,13 +344,13 @@ if (($page > $db->totalPages) && !empty($_GET['page-id'])) {
 
                                     <?php if ($db->totalPages > $page) { ?>
                                       <li>
-                                          <a href="<?php echo Wo_LoadAdminLinkSettings('manage-posts?page-id=' . ($page + 1)).$link; ?>" data-ajax="?path=manage-posts&page-id=<?php echo($page + 1) ?><?php echo($link); ?>" class="waves-effect" title="Next Page">
+                                          <a href="<?php echo Wo_LoadAdminLinkSettings('reels_settings?page-id=' . ($page + 1)).$link; ?>" data-ajax="?path=reels_settings&page-id=<?php echo($page + 1) ?><?php echo($link); ?>" class="waves-effect" title="Next Page">
                                               <i class="material-icons">chevron_right</i>
                                           </a>
                                       </li>
                                     <?php } ?>
                                     <li>
-                                      <a href="<?php echo Wo_LoadAdminLinkSettings('manage-posts?page-id=' . ($db->totalPages)).$link; ?>" data-ajax="?path=manage-posts&page-id=<?php echo($db->totalPages) ?><?php echo($link); ?>" class="waves-effect" title='Last Page'>
+                                      <a href="<?php echo Wo_LoadAdminLinkSettings('reels_settings?page-id=' . ($db->totalPages)).$link; ?>" data-ajax="?path=reels_settings&page-id=<?php echo($db->totalPages) ?><?php echo($link); ?>" class="waves-effect" title='Last Page'>
                                           <i class="material-icons">last_page</i>
                                       </a>
                                     </li>
@@ -574,19 +505,19 @@ jQuery(document).ready(function($) {
             event.preventDefault();
             if ($(this).attr('data-range-key') != 'Custom Range') {
                 $(document).off('click', '.ranges ul li');
-                $('#redirect_link').attr('href', "<?php echo Wo_LoadAdminLinkSettings('manage-posts').$rang_link; ?>&range="+$(this).attr('data-range-key'));
-                $('#redirect_link').attr('data-ajax', "?path=manage-posts<?php echo('&'.$rang_link) ?>&range="+$(this).attr('data-range-key'));
+                $('#redirect_link').attr('href', "<?php echo Wo_LoadAdminLinkSettings('reels_settings').$rang_link; ?>&range="+$(this).attr('data-range-key'));
+                $('#redirect_link').attr('data-ajax', "?path=reels_settings<?php echo('&'.$rang_link) ?>&range="+$(this).attr('data-range-key'));
                 $('#redirect_link').click();
-                //location.href = "<?php echo Wo_LoadAdminLinkSettings('manage-posts').$rang_link; ?>&range="+$(this).attr('data-range-key');
+                //location.href = "<?php echo Wo_LoadAdminLinkSettings('reels_settings').$rang_link; ?>&range="+$(this).attr('data-range-key');
             }
         });
         $(document).on('click', '.applyBtn', function(event) {
             event.preventDefault();
             $(document).off('click', '.applyBtn');
-            $('#redirect_link').attr('href', "<?php echo Wo_LoadAdminLinkSettings('manage-posts').$rang_link; ?>&range="+$(this).parent('.drp-buttons').find('.drp-selected').html());
-            $('#redirect_link').attr('data-ajax', "?path=manage-posts<?php echo('&'.$rang_link) ?>&range="+$(this).parent('.drp-buttons').find('.drp-selected').html());
+            $('#redirect_link').attr('href', "<?php echo Wo_LoadAdminLinkSettings('reels_settings').$rang_link; ?>&range="+$(this).parent('.drp-buttons').find('.drp-selected').html());
+            $('#redirect_link').attr('data-ajax', "?path=reels_settings<?php echo('&'.$rang_link) ?>&range="+$(this).parent('.drp-buttons').find('.drp-selected').html());
             $('#redirect_link').click();
-            //location.href = "<?php echo Wo_LoadAdminLinkSettings('manage-posts').$rang_link; ?>&range="+$('.drp-selected').html();
+            //location.href = "<?php echo Wo_LoadAdminLinkSettings('reels_settings').$rang_link; ?>&range="+$('.drp-selected').html();
         });
 });
 

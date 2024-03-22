@@ -1281,32 +1281,26 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 
 					$('.off-play').css('display', 'none');
 					$('.on-play').css('display', 'block');
+					$('.width_').css('width', '100%');
 
 					storyLightbox.removeClass('dont_close_story_' + value);
 
-					$('.width_').css('width', '100%');
+					
 					} else {
 
 					if (videoElement) {mediaElement.pause();}
 
 					$('.off-play').css('display', 'block');
 					$('.on-play').css('display', 'none');
+					$('.width_').css('width', $('.width_').css('width'));
 
 					storyLightbox.addClass('dont_close_story_' + value);
-
-					$('.width_').css('width', $('.width_').css('width'));
 
 					if ($('#users-reacted-modal').is(':hidden')) {
 
 						value = $('.story_lightbox').attr('data-post-id');
 						storyLightbox.removeClass('dont_close_story_' + value);
-
-						setTimeout(function() {
-
-							$('.width_').css('width', '100%');
-							storyLightbox.find('.next-btn').click();
-
-						}, 100);
+						storyLightbox.find('.next-btn').click();
 
 					}
 				}
@@ -1325,12 +1319,12 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 						$('.width_').addClass('load');
 						setTimeout(function() {
 							$('.width_').css('width', '100%');
-						}, 200);
+						}, 0);
 						Wo_Delay(function() {
 							if ($('.dont_close_story_' + $value).length == 0) {
 								Get_NextStory(data.story_id);
 							}
-						}, 100);
+						}, 10);
 					} else {
 						Wo_CloseLightbox();
 					}
@@ -1386,19 +1380,14 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 						videoElement.addEventListener('loadedmetadata', function() {
 							duration = videoElement.duration * 1000;
 
-							$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's ease');
+							$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's linear');
 
 							setTimeout(function() {
 
 								video_story = $('#video_story').attr('data-story-video');
 
 								$('.width_').addClass('load');
-
-								setTimeout(function() {
-
-									$('.width_').css('width', '100%');
-
-								}, 200);
+								$('.width_').css('width', '100%');
 
 								Wo_Delay(function() {
 
@@ -1411,7 +1400,7 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 										}
 									}
 								}, duration);
-							}, 200);
+							}, 0);
 
 						});
 					} else {
@@ -1423,14 +1412,6 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 							video_story = $('#video_story').attr('data-story-video');
 
 							$('.width_').addClass('load');
-
-							setTimeout(function() {
-
-								$('.width_').css('width', '100%');
-
-							}, 200);
-
-							Wo_Delay(function() {
 
 								value = $('.user_story_').attr('id');
 
@@ -1447,10 +1428,7 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 									}
 								}
 							}, duration);
-						}, 200);
 					}
-
-					
 				});
 			});
 
@@ -1481,11 +1459,10 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 							if (videoElement) {
 								videoElement.addEventListener('loadedmetadata', function() {
 									duration = videoElement.duration * 1000;
-									console.log(duration, "see_all_stories");
-									$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's ease');
+									$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's linear');
 									setTimeout(function() {
 										$('.width_').css('width', '100%');
-									}, 200);
+									}, 10);
 									Wo_Delay(function() {
 										value = $('.user_story_').attr('id');
 										if ($('.dont_close_story_' + value).length == 0) {
@@ -1503,7 +1480,7 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 								});
 							} else {
 								console.log(duration, "see_all_stories");
-								$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's ease');
+								$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's linear');
 								setTimeout(function() {
 									$('.width_').css('width', '100%');
 								}, 200);
@@ -1559,10 +1536,10 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 							videoElement.addEventListener('loadedmetadata', function() {
 								duration = videoElement.duration * 1000;
 								console.log(duration, "next");
-								$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's ease');
+								$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's linear');
 								setTimeout(function() {
 									$('.width_').css('width', '100%');
-								}, 200);
+								}, 100);
 								Wo_Delay(function() {
 									value = $('.user_story_').attr('id');
 									if ($('.dont_close_story_' + value).length == 0) {
@@ -1580,7 +1557,7 @@ if ($wo['page'] != 'admin' && $wo['page'] != 'welcome' && $wo['page'] != 'messag
 							});
 						} else {
 							console.log(duration, "next");
-							$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's ease');
+							$('.story_lightbox .mfp-wrap .mfp_progress_line_ .load').css('transition', 'all ' + (duration / 1000) + 's linear');
 							setTimeout(function() {
 								$('.width_').css('width', '100%');
 							}, 200);

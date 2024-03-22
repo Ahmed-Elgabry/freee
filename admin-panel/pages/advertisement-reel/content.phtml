@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div>
+        <h3>Advertisement</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="#">Manage Reels</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Advertisement Reels</li>
+            </ol>
+        </nav>
+    </div>
+    <!-- Vertical Layout -->
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="card-title">Advertisements Settings</h6>
+                    <div class="ads-settings-alert"></div>
+                    <form class="ads-settings" method="POST">
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Video ads show after how many videos ?</label>
+                                <input type="number" id="video_ads_show" name="video_ads_show" class="form-control" value="<?php echo $wo['config']['video_ads_show']; ?>">
+                            </div>
+                        </div>
+                      
+                        <div class="form-group form-float">
+                            <div class="form-line">
+                                <label class="form-label">Video ads skip button seconds</label>
+                                <input type="number" id="video_ad_skip" name="video_ad_skip" class="form-control" value="<?php echo $wo['config']['video_ad_skip']; ?>">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <input type="hidden" name="hash_id" value="<?php echo Wo_CreateSession(); ?>">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <!-- #END# Vertical Layout -->
+
+<script>
+
+$(function() {
+    var setTimeOutColor = setTimeout(function (){});
+    $('input[type=text], input[type=number]').on('input', delay(function() {
+            clearTimeout(setTimeOutColor);
+            var thisElement = $(this);
+            var configName = thisElement.attr('name');
+            var hash_id = $('input[name=hash_id]').val();
+            var objData = {};
+            objData[configName] = this.value;
+            objData['hash_id'] = hash_id;
+            thisElement.addClass('warning');
+            $.post( Wo_Ajax_Requests_File() + '?f=admin_setting&s=update_general_setting', objData, function (data) {
+                if (data.status == 200) {
+                    thisElement.removeClass('warning');
+                    thisElement.addClass('success');
+                } else {
+                    thisElement.addClass('error');
+                }
+                var setTimeOutColor = setTimeout(function () {
+                    thisElement.removeClass('success');
+                    thisElement.removeClass('warning');
+                    thisElement.removeClass('error');
+                }, 2000);
+                //thisElement.focus();
+            });
+    }, 500));
+});
+</script>

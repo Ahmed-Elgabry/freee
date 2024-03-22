@@ -1308,13 +1308,14 @@ function Wo_SavePost(post_id) {
 }
 
 // report post
-function Wo_ReportPost(post_id) {
+function Wo_ReportPost(post_id, is_reel) {
 	var post = $('#post-' + post_id);
 	post.find('.tag_post_men_disable').show();
 	$.get(Wo_Ajax_Requests_File(), {
 		f: 'posts',
 		s: 'report_post',
-		post_id: post_id
+		post_id: post_id,
+    is_reel: is_reel
 	}, function (data) {
 		if(data.status == 200) {
 			post.find('.report-post').html(data.text);

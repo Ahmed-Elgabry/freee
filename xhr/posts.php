@@ -2151,7 +2151,8 @@ if ($f == 'posts') {
     if ($s == 'report_post') {
         if (!empty($_GET['post_id'])) {
             $post_data = array(
-                'post_id' => $_GET['post_id']
+                'post_id' => $_GET['post_id'],
+                'is_reel' => $_GET['is_reel']
             );
             if (Wo_ReportPost($post_data) == 'unreport') {
                 $data = array(

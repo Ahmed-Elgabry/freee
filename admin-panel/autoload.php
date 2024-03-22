@@ -1,13 +1,14 @@
 <?php
 cleanConfigData();
-$page  = 'dashboard';
+$page = 'dashboard';
 $wo['all_pages'] = scandir('admin-panel/pages');
-unset($wo['all_pages'] [0]);
-unset($wo['all_pages'] [1]);
-unset($wo['all_pages'] [2]);
-$pages = array(
+unset($wo['all_pages'][0]);
+unset($wo['all_pages'][1]);
+unset($wo['all_pages'][2]);
+$pages = [
     'app-version',
     'reels_settings',
+    'advertisement-reel',
     'general-settings',
     'dashboard',
     'site-settings',
@@ -123,64 +124,60 @@ $pages = array(
     'edit-section',
     'cronjob_settings',
     'system_status',
-    "upload-to-storage",
-    "ai-settings",
-    "manage-content-monetization",
-);
-$wo['mod_pages'] = array('dashboard', 'post-settings', 'manage-stickers', 'manage-gifts', 'manage-users', 'online-users', 'manage-stories', 'manage-pages', 'manage-groups', 'manage-posts', 'manage-articles', 'manage-events', 'manage-forum-threads', 'manage-forum-messages', 'manage-movies', 'manage-games', 'add-new-game', 'manage-user-ads', 'manage-reports', 'manage-third-psites', 'edit-movie','bank-receipts','job-categories','manage-jobs','reels_settings');
-
+    'upload-to-storage',
+    'ai-settings',
+    'manage-content-monetization',
+];
+$wo['mod_pages'] = ['dashboard', 'post-settings', 'manage-stickers', 'manage-gifts', 'manage-users', 'online-users', 'manage-stories', 'manage-pages', 'manage-groups', 'manage-posts', 'manage-articles', 'manage-events', 'manage-forum-threads', 'manage-forum-messages', 'manage-movies', 'manage-games', 'add-new-game', 'manage-user-ads', 'manage-reports', 'manage-third-psites', 'edit-movie', 'bank-receipts', 'job-categories', 'manage-jobs', 'reels_settings','advertisement-reel'];
 
 if (!empty($_GET['page'])) {
     $page = Wo_Secure($_GET['page'], 0);
 }
-$wo['decode_android_v']  = $wo['config']['footer_background'];
-$wo['decode_android_value']  = base64_decode('I2FhYQ==');
+$wo['decode_android_v'] = $wo['config']['footer_background'];
+$wo['decode_android_value'] = base64_decode('I2FhYQ==');
 
-$wo['decode_android_n_v']  = $wo['config']['footer_background_n'];
-$wo['decode_android_n_value']  = base64_decode('I2FhYQ==');
+$wo['decode_android_n_v'] = $wo['config']['footer_background_n'];
+$wo['decode_android_n_value'] = base64_decode('I2FhYQ==');
 
-$wo['decode_ios_v']  = $wo['config']['footer_background_2'];
-$wo['decode_ios_value']  = base64_decode('I2FhYQ==');
+$wo['decode_ios_v'] = $wo['config']['footer_background_2'];
+$wo['decode_ios_value'] = base64_decode('I2FhYQ==');
 
-$wo['decode_windwos_v']  = $wo['config']['footer_text_color'];
-$wo['decode_windwos_value']  = base64_decode('I2RkZA==');
+$wo['decode_windwos_v'] = $wo['config']['footer_text_color'];
+$wo['decode_windwos_value'] = base64_decode('I2RkZA==');
 if ($is_moderoter && !empty($wo['user']['permission'])) {
-    $wo['user']['permission'] = json_decode($wo['user']['permission'],true);
+    $wo['user']['permission'] = json_decode($wo['user']['permission'], true);
 
     if (!in_array($page, array_keys($wo['user']['permission']))) {
         $wo['user']['permission'][$page] = 0;
         $permission = json_encode($wo['user']['permission']);
-        $db->where('user_id',$wo['user']['user_id'])->update(T_USERS,array('permission' => $permission));
-        
-            cache($wo['user']['id'], 'users', 'delete');
-        header("Location: " . Wo_LoadAdminLinkSettings($page));
-        exit();
-    }
-    else{
+        $db->where('user_id', $wo['user']['user_id'])->update(T_USERS, ['permission' => $permission]);
+
+        cache($wo['user']['id'], 'users', 'delete');
+        header('Location: '.Wo_LoadAdminLinkSettings($page));
+        exit;
+    } else {
         if ($wo['user']['permission'][$page] == 0) {
             foreach ($wo['user']['permission'] as $key => $value) {
                 if ($value == 1) {
-                    header("Location: " . Wo_LoadAdminLinkSettings($key));
-                    exit();
+                    header('Location: '.Wo_LoadAdminLinkSettings($key));
+                    exit;
                 }
             }
         }
     }
-}
-elseif ($is_moderoter && empty($wo['user']['permission'])) {
-    $permission = array();
+} elseif ($is_moderoter && empty($wo['user']['permission'])) {
+    $permission = [];
     if (!empty($wo['all_pages'])) {
-        foreach ($wo['all_pages']  as $key => $value) {
-            if (in_array($value,$wo['mod_pages'])) {
+        foreach ($wo['all_pages'] as $key => $value) {
+            if (in_array($value, $wo['mod_pages'])) {
                 $permission[$value] = 1;
-            }
-            else{
+            } else {
                 $permission[$value] = 0;
             }
         }
     }
     $permission = json_encode($permission);
-    $db->where('user_id',$wo['user']['user_id'])->update(T_USERS,array('permission' => $permission));
+    $db->where('user_id', $wo['user']['user_id'])->update(T_USERS, ['permission' => $permission]);
     cache($wo['user']['id'], 'users', 'delete');
     $wo['user'] = Wo_UserData($wo['user']['user_id']);
 }
@@ -192,16 +189,16 @@ elseif ($is_moderoter && empty($wo['user']['permission'])) {
 //     }
 // }
 if (in_array($page, $pages)) {
-   $page_loaded = Wo_LoadAdminPage("$page/content");
+    $page_loaded = Wo_LoadAdminPage("$page/content");
 }
 if (empty($page_loaded)) {
-    header("Location: " . Wo_SeoLink('index.php?link1=admin-cp'));
-    exit();
+    header('Location: '.Wo_SeoLink('index.php?link1=admin-cp'));
+    exit;
 }
 
-$notify_count = $db->where('recipient_id',0)->where('admin',1)->where('seen',0)->getValue(T_NOTIFICATION,'COUNT(*)');
-$notifications = $db->where('recipient_id',0)->where('admin',1)->where('seen',0)->orderBy('id','DESC')->get(T_NOTIFICATION);
-$old_notifications = $db->where('recipient_id',0)->where('admin',1)->where('seen',0,'!=')->orderBy('id','DESC')->get(T_NOTIFICATION,5);
+$notify_count = $db->where('recipient_id', 0)->where('admin', 1)->where('seen', 0)->getValue(T_NOTIFICATION, 'COUNT(*)');
+$notifications = $db->where('recipient_id', 0)->where('admin', 1)->where('seen', 0)->orderBy('id', 'DESC')->get(T_NOTIFICATION);
+$old_notifications = $db->where('recipient_id', 0)->where('admin', 1)->where('seen', 0, '!=')->orderBy('id', 'DESC')->get(T_NOTIFICATION, 5);
 $mode = 'day';
 if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
     $mode = 'night';
@@ -218,52 +215,52 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
 
 
     <!-- Main css -->
-    <link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('vendors/bundle.css')) ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/bundle.css'); ?>" type="text/css">
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Daterangepicker -->
-    <link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('vendors/datepicker/daterangepicker.css')) ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/datepicker/daterangepicker.css'); ?>" type="text/css">
 
     <!-- DataTable -->
-    <link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('vendors/dataTable/datatables.min.css')) ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/dataTable/datatables.min.css'); ?>" type="text/css">
 
 <!-- App css -->
-    <link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('assets/css/app.css')) ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('assets/css/app.css'); ?>" type="text/css">
     <!-- Main scripts -->
-<script src="<?php echo(Wo_LoadAdminLink('vendors/bundle.js')) ?>"></script>
+<script src="<?php echo Wo_LoadAdminLink('vendors/bundle.js'); ?>"></script>
 
     <!-- Apex chart -->
-    <script src="<?php echo(Wo_LoadAdminLink('vendors/charts/apex/apexcharts.min.js')) ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('vendors/charts/apex/apexcharts.min.js'); ?>"></script>
 
     <!-- Daterangepicker -->
-    <script src="<?php echo(Wo_LoadAdminLink('vendors/datepicker/daterangepicker.js')) ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('vendors/datepicker/daterangepicker.js'); ?>"></script>
 
     <!-- DataTable -->
-    <script src="<?php echo(Wo_LoadAdminLink('vendors/dataTable/datatables.min.js')) ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('vendors/dataTable/datatables.min.js'); ?>"></script>
 
     <!-- Dashboard scripts -->
-    <script src="<?php echo(Wo_LoadAdminLink('assets/js/examples/pages/dashboard.js')) ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('assets/js/examples/pages/dashboard.js'); ?>"></script>
     <script src="<?php echo Wo_LoadAdminLink('vendors/charts/chartjs/chart.min.js'); ?>"></script>
 
 <!-- App scripts -->
 
 <link href="<?php echo Wo_LoadAdminLink('vendors/sweetalert/sweetalert.css'); ?>" rel="stylesheet" />
 <script src="<?php echo Wo_LoadAdminLink('assets/js/admin.js'); ?>"></script>
-<link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('vendors/select2/css/select2.min.css')) ?>" type="text/css">
+<link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/select2/css/select2.min.css'); ?>" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
-<?php //if ($page == 'create-article' || $page == 'edit-article' || $page == 'manage-announcements' || $page == 'newsletters') { ?>
+<?php // if ($page == 'create-article' || $page == 'edit-article' || $page == 'manage-announcements' || $page == 'newsletters') {?>
 <script src="<?php echo Wo_LoadAdminLink('vendors/tinymce/js/tinymce/tinymce.min.js'); ?>"></script>
 <script src="<?php echo Wo_LoadAdminLink('vendors/bootstrap-tagsinput/src/bootstrap-tagsinput.js'); ?>"></script>
 <link href="<?php echo Wo_LoadAdminLink('vendors/bootstrap-tagsinput/src/bootstrap-tagsinput.css'); ?>" rel="stylesheet" />
-<?php //} ?>
-<?php //if ($page == 'custom-code') { ?>
+<?php // }?>
+<?php // if ($page == 'custom-code') {?>
 <script src="<?php echo Wo_LoadAdminLink('vendors/codemirror-5.30.0/lib/codemirror.js'); ?>"></script>
 <script src="<?php echo Wo_LoadAdminLink('vendors/codemirror-5.30.0/mode/css/css.js'); ?>"></script>
 <script src="<?php echo Wo_LoadAdminLink('vendors/codemirror-5.30.0/mode/javascript/javascript.js'); ?>"></script>
 <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/codemirror-5.30.0/lib/codemirror.css'); ?>">
-<?php //} ?>
+<?php // }?>
 
 
     <!--[if lt IE 9]>
@@ -272,20 +269,20 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
     <![endif]-->
     <?php if ($page == 'bank-receipts' || $page == 'manage-verification-reqeusts' || $page == 'monetization-requests' || $page == 'manage-user-ads') { ?>
         <!-- Css -->
-        <link rel="stylesheet" href="<?php echo(Wo_LoadAdminLink('vendors/lightbox/magnific-popup.css')) ?>" type="text/css">
+        <link rel="stylesheet" href="<?php echo Wo_LoadAdminLink('vendors/lightbox/magnific-popup.css'); ?>" type="text/css">
 
         <!-- Javascript -->
-        <script src="<?php echo(Wo_LoadAdminLink('vendors/lightbox/jquery.magnific-popup.min.js')) ?>"></script>
-        <script src="<?php echo(Wo_LoadAdminLink('vendors/charts/justgage/raphael-2.1.4.min.js')) ?>"></script>
-        <script src="<?php echo(Wo_LoadAdminLink('vendors/charts/justgage/justgage.js')) ?>"></script>
+        <script src="<?php echo Wo_LoadAdminLink('vendors/lightbox/jquery.magnific-popup.min.js'); ?>"></script>
+        <script src="<?php echo Wo_LoadAdminLink('vendors/charts/justgage/raphael-2.1.4.min.js'); ?>"></script>
+        <script src="<?php echo Wo_LoadAdminLink('vendors/charts/justgage/justgage.js'); ?>"></script>
     <?php } ?>
     <script src="<?php echo Wo_LoadAdminLink('assets/js/jquery.form.min.js'); ?>"></script>
     <script>
         function Wo_Ajax_Requests_File(){
-            return "<?php echo $wo['config']['site_url'].'/requests.php';?>"
+            return "<?php echo $wo['config']['site_url'].'/requests.php'; ?>"
         }
         function Wo_Ajax_Requests_File_load(){
-            return "<?php echo $wo['config']['site_url'].'/admin_load.php';?>"
+            return "<?php echo $wo['config']['site_url'].'/admin_load.php'; ?>"
         }
     </script>
     <style>
@@ -338,10 +335,10 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
         });
     });
 </script>
-<body <?php echo ($mode == 'night' ? 'class="dark"' : ''); ?>>
+<body <?php echo $mode == 'night' ? 'class="dark"' : ''; ?>>
     <div class="barloading"></div>
     <a id="redirect_link" href="" data-ajax="" data-sent="0"></a>
-    <input type="hidden" class="main_session" value="<?php echo Wo_CreateMainSession();?>">
+    <input type="hidden" class="main_session" value="<?php echo Wo_CreateMainSession(); ?>">
     <div class="colors"> <!-- To use theme colors with Javascript -->
         <div class="bg-primary"></div>
         <div class="bg-primary-bright"></div>
@@ -383,8 +380,8 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                 </div>
 
                 <div class="header-logo">
-                    <a href="<?php echo $wo['config']['site_url'] ?>">
-                        <img class="logo" src="<?php echo $wo['config']['theme_url'];?>/img/<?php echo($wo['config']['theme'] == 'sunshine' ? 'night-' : '') ?>logo.<?php echo $wo['config']['logo_extension'];?>" alt="logo">
+                    <a href="<?php echo $wo['config']['site_url']; ?>">
+                        <img class="logo" src="<?php echo $wo['config']['theme_url']; ?>/img/<?php echo $wo['config']['theme'] == 'sunshine' ? 'night-' : ''; ?>logo.<?php echo $wo['config']['logo_extension']; ?>" alt="logo">
                     </a>
                 </div>
             </div>
@@ -427,34 +424,29 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                         <?php if ($notify_count > 0) { ?>
                                             <li class="px-4 py-2 text-center small text-muted bg-light">Unread Notifications</li>
                                             <?php if (!empty($notifications)) {
-                                                    foreach ($notifications as $key => $notify) {
-                                                        $page_ = '';
-                                                        $text = '';
-                                                        if ($notify->type == 'bank') {
-                                                            $page_ = 'bank-receipts';
-                                                            $text = 'You have a new bank payment awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'verify') {
-                                                            $page_ = 'manage-verification-reqeusts';
-                                                            $text = 'You have a new verification requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'refund') {
-                                                            $page_ = 'pro-refund';
-                                                            $text = 'You have a new refund requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'with') {
-                                                            $page_ = 'payment-reqeuests';
-                                                            $text = 'You have a new withdrawal requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'report') {
-                                                            $page_ = 'manage-reports';
-                                                            $text = 'You have a new reports awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'user_reports') {
-                                                            $page_ = 'user_reports';
-                                                            $text = 'You have a new reports awaiting your approval';
-                                                        }
-                                                ?>
+                                                foreach ($notifications as $key => $notify) {
+                                                    $page_ = '';
+                                                    $text = '';
+                                                    if ($notify->type == 'bank') {
+                                                        $page_ = 'bank-receipts';
+                                                        $text = 'You have a new bank payment awaiting your approval';
+                                                    } elseif ($notify->type == 'verify') {
+                                                        $page_ = 'manage-verification-reqeusts';
+                                                        $text = 'You have a new verification requests awaiting your approval';
+                                                    } elseif ($notify->type == 'refund') {
+                                                        $page_ = 'pro-refund';
+                                                        $text = 'You have a new refund requests awaiting your approval';
+                                                    } elseif ($notify->type == 'with') {
+                                                        $page_ = 'payment-reqeuests';
+                                                        $text = 'You have a new withdrawal requests awaiting your approval';
+                                                    } elseif ($notify->type == 'report') {
+                                                        $page_ = 'manage-reports';
+                                                        $text = 'You have a new reports awaiting your approval';
+                                                    } elseif ($notify->type == 'user_reports') {
+                                                        $page_ = 'user_reports';
+                                                        $text = 'You have a new reports awaiting your approval';
+                                                    }
+                                                    ?>
                                             <li class="px-4 py-3 list-group-item">
                                                 <a href="<?php echo Wo_LoadAdminLinkSettings($page_); ?>" class="d-flex align-items-center hide-show-toggler">
                                                     <div class="flex-shrink-0">
@@ -463,13 +455,13 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                                                 class="avatar-title bg-info-bright text-info rounded-circle">
                                                                 <?php if ($notify->type == 'bank') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                                                                <?php }elseif ($notify->type == 'verify') { ?>
+                                                                <?php } elseif ($notify->type == 'verify') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#2196f3" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"></path></svg>
-                                                                <?php }elseif ($notify->type == 'refund') { ?>
+                                                                <?php } elseif ($notify->type == 'refund') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                                                                <?php }elseif ($notify->type == 'with') { ?>
+                                                                <?php } elseif ($notify->type == 'with') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                                                                <?php }elseif ($notify->type == 'report' || $notify->type == 'user_reports') { ?>
+                                                                <?php } elseif ($notify->type == 'report' || $notify->type == 'user_reports') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
                                                                 <?php } ?>
 
@@ -484,39 +476,35 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                                     </div>
                                                 </a>
                                             </li>
-                                            <?php } } ?>
+                                            <?php }
+                                                } ?>
                                         <?php } ?>
                                         <?php if ($notify_count == 0 && !empty($old_notifications)) { ?>
                                             <li class="px-4 py-2 text-center small text-muted bg-light">Old Notifications</li>
                                             <?php
-                                                    foreach ($old_notifications as $key => $notify) {
-                                                        $page_ = '';
-                                                        $text = '';
-                                                        if ($notify->type == 'bank') {
-                                                            $page_ = 'bank-receipts';
-                                                            $text = 'You have a new bank payment awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'verify') {
-                                                            $page_ = 'verification-requests';
-                                                            $text = 'You have a new verification requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'refund') {
-                                                            $page_ = 'pro-refund';
-                                                            $text = 'You have a new refund requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'with') {
-                                                            $page_ = 'payment-reqeuests';
-                                                            $text = 'You have a new withdrawal requests awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'report') {
-                                                            $page_ = 'manage-reports';
-                                                            $text = 'You have a new reports awaiting your approval';
-                                                        }
-                                                        elseif ($notify->type == 'user_reports') {
-                                                            $page_ = 'user_reports';
-                                                            $text = 'You have a new reports awaiting your approval';
-                                                        }
-                                                ?>
+                                                        foreach ($old_notifications as $key => $notify) {
+                                                            $page_ = '';
+                                                            $text = '';
+                                                            if ($notify->type == 'bank') {
+                                                                $page_ = 'bank-receipts';
+                                                                $text = 'You have a new bank payment awaiting your approval';
+                                                            } elseif ($notify->type == 'verify') {
+                                                                $page_ = 'verification-requests';
+                                                                $text = 'You have a new verification requests awaiting your approval';
+                                                            } elseif ($notify->type == 'refund') {
+                                                                $page_ = 'pro-refund';
+                                                                $text = 'You have a new refund requests awaiting your approval';
+                                                            } elseif ($notify->type == 'with') {
+                                                                $page_ = 'payment-reqeuests';
+                                                                $text = 'You have a new withdrawal requests awaiting your approval';
+                                                            } elseif ($notify->type == 'report') {
+                                                                $page_ = 'manage-reports';
+                                                                $text = 'You have a new reports awaiting your approval';
+                                                            } elseif ($notify->type == 'user_reports') {
+                                                                $page_ = 'user_reports';
+                                                                $text = 'You have a new reports awaiting your approval';
+                                                            }
+                                                            ?>
                                             <li class="px-4 py-3 list-group-item">
                                                 <a href="<?php echo Wo_LoadAdminLinkSettings($page_); ?>" class="d-flex align-items-center hide-show-toggler">
                                                     <div class="flex-shrink-0">
@@ -524,13 +512,13 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                                             <span class="avatar-title bg-secondary-bright text-secondary rounded-circle">
                                                                 <?php if ($notify->type == 'bank') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
-                                                                <?php }elseif ($notify->type == 'verify') { ?>
+                                                                <?php } elseif ($notify->type == 'verify') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#2196f3" d="M12 2C6.5 2 2 6.5 2 12S6.5 22 12 22 22 17.5 22 12 17.5 2 12 2M10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z"></path></svg>
-                                                                <?php }elseif ($notify->type == 'refund') { ?>
+                                                                <?php } elseif ($notify->type == 'refund') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-refresh-cw"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-                                                                <?php }elseif ($notify->type == 'with') { ?>
+                                                                <?php } elseif ($notify->type == 'with') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-dollar-sign"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
-                                                                <?php }elseif ($notify->type == 'report' || $notify->type == 'user_reports') { ?>
+                                                                <?php } elseif ($notify->type == 'report' || $notify->type == 'user_reports') { ?>
                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
                                                                 <?php } ?>
                                                             </span>
@@ -544,7 +532,8 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                                     </div>
                                                 </a>
                                             </li>
-                                        <?php } } ?>
+                                        <?php }
+                                                        } ?>
                                     </ul>
                                 </div>
                                 <?php if ($notify_count > 0) { ?>
@@ -579,13 +568,13 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                     <a href="<?php echo $wo['user']['url']; ?>" class="btn btn-outline-light btn-rounded">View Profile</a>
                                 </div>
                                 <div class="list-group">
-                                    <a href="<?php echo(Wo_Link('logout')) ?>" class="list-group-item text-danger">Sign Out!</a>
+                                    <a href="<?php echo Wo_Link('logout'); ?>" class="list-group-item text-danger">Sign Out!</a>
                                     <?php if ($mode == 'night') { ?>
                                         <a href="javascript:void(0)" class="list-group-item admin_mode" onclick="ChangeMode('day')">
                                             <span id="night-mode-text">Day mode</span>
                                             <svg class="feather feather-moon float-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                                         </a>
-                                    <?php }else{ ?>
+                                    <?php } else { ?>
                                         <a href="javascript:void(0)" class="list-group-item admin_mode" onclick="ChangeMode('night')">
                                             <span id="night-mode-text">Night mode</span>
                                             <svg class="feather feather-moon float-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -643,7 +632,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                     </li>
 
                     <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['post-settings'] == 1 || $wo['user']['permission']['manage-colored-posts'] == 1 || $wo['user']['permission']['manage-reactions'] == 1 || $wo['user']['permission']['live'] == 1 || $wo['user']['permission']['general-settings'] == 1 || $wo['user']['permission']['site-settings'] == 1 || $wo['user']['permission']['amazon-settings'] == 1 || $wo['user']['permission']['email-settings'] == 1 || $wo['user']['permission']['video-settings'] == 1 || $wo['user']['permission']['social-login'] == 1 || $wo['user']['permission']['node'] == 1 || $wo['user']['permission']['cronjob_settings'] == 1))) { ?>
-                    <li <?php echo ($page == 'general-settings' || $page == 'post-settings' || $page == 'site-settings' || $page == 'email-settings' || $page == 'social-login' || $page == 'site-features' || $page == 'amazon-settings' ||  $page == 'video-settings' || $page == 'manage-currencies' || $page == 'manage-colored-posts' || $page == 'live' || $page == 'node' || $page == 'manage-reactions' || $page == 'ffmpeg' || $page == 'cronjob_settings') ? 'class="open"' : ''; ?>>
+                    <li <?php echo ($page == 'general-settings' || $page == 'post-settings' || $page == 'site-settings' || $page == 'email-settings' || $page == 'social-login' || $page == 'site-features' || $page == 'amazon-settings' || $page == 'video-settings' || $page == 'manage-currencies' || $page == 'manage-colored-posts' || $page == 'live' || $page == 'node' || $page == 'manage-reactions' || $page == 'ffmpeg' || $page == 'cronjob_settings') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
                                 <i class="material-icons">settings</i>
@@ -739,9 +728,9 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                     </li>
                     <?php } ?>
 
-                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-apps'] == 1 || $wo['user']['permission']['manage-pages'] == 1 || $wo['user']['permission']['manage-stickers'] == 1 || $wo['user']['permission']['add-new-sticker'] == 1 || $wo['user']['permission']['manage-gifts'] == 1 || $wo['user']['permission']['add-new-gift'] == 1 || $wo['user']['permission']['manage-groups'] == 1 || $wo['user']['permission']['manage-posts'] == 1 || $wo['user']['permission']['manage-articles'] == 1 || $wo['user']['permission']['manage-events'] == 1 || $wo['user']['permission']['manage-forum-sections'] == 1 || $wo['user']['permission']['manage-forum-forums'] == 1 || $wo['user']['permission']['manage-forum-threads'] == 1 || $wo['user']['permission']['manage-forum-messages'] == 1 || $wo['user']['permission']['create-new-forum'] == 1 || $wo['user']['permission']['create-new-section'] == 1 || $wo['user']['permission']['manage-movies'] == 1 || $wo['user']['permission']['add-new-movies'] == 1 || $wo['user']['permission']['manage-games'] == 1 || $wo['user']['permission']['add-new-game'] == 1 || $wo['user']['permission']['edit-movie'] == 1 || $wo['user']['permission']['pages-categories'] == 1 || $wo['user']['permission']['pages-sub-categories'] == 1 || $wo['user']['permission']['groups-sub-categories'] == 1 || $wo['user']['permission']['products-sub-categories'] == 1 || $wo['user']['permission']['groups-categories'] == 1 || $wo['user']['permission']['blogs-categories'] == 1 || $wo['user']['permission']['products-categories'] == 1 || $wo['user']['permission']['manage-fund'] == 1 || $wo['user']['permission']['manage-jobs'] == 1 || $wo['user']['permission']['manage-offers'] == 1 || $wo['user']['permission']['pages-fields'] == 1 || $wo['user']['permission']['groups-fields'] == 1 || $wo['user']['permission']['products-fields'] == 1 ))) { ?>
+                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-apps'] == 1 || $wo['user']['permission']['manage-pages'] == 1 || $wo['user']['permission']['manage-stickers'] == 1 || $wo['user']['permission']['add-new-sticker'] == 1 || $wo['user']['permission']['manage-gifts'] == 1 || $wo['user']['permission']['add-new-gift'] == 1 || $wo['user']['permission']['manage-groups'] == 1 || $wo['user']['permission']['manage-posts'] == 1 || $wo['user']['permission']['manage-articles'] == 1 || $wo['user']['permission']['manage-events'] == 1 || $wo['user']['permission']['manage-forum-sections'] == 1 || $wo['user']['permission']['manage-forum-forums'] == 1 || $wo['user']['permission']['manage-forum-threads'] == 1 || $wo['user']['permission']['manage-forum-messages'] == 1 || $wo['user']['permission']['create-new-forum'] == 1 || $wo['user']['permission']['create-new-section'] == 1 || $wo['user']['permission']['manage-movies'] == 1 || $wo['user']['permission']['add-new-movies'] == 1 || $wo['user']['permission']['manage-games'] == 1 || $wo['user']['permission']['add-new-game'] == 1 || $wo['user']['permission']['edit-movie'] == 1 || $wo['user']['permission']['pages-categories'] == 1 || $wo['user']['permission']['pages-sub-categories'] == 1 || $wo['user']['permission']['groups-sub-categories'] == 1 || $wo['user']['permission']['products-sub-categories'] == 1 || $wo['user']['permission']['groups-categories'] == 1 || $wo['user']['permission']['blogs-categories'] == 1 || $wo['user']['permission']['products-categories'] == 1 || $wo['user']['permission']['manage-fund'] == 1 || $wo['user']['permission']['manage-jobs'] == 1 || $wo['user']['permission']['manage-offers'] == 1 || $wo['user']['permission']['pages-fields'] == 1 || $wo['user']['permission']['groups-fields'] == 1 || $wo['user']['permission']['products-fields'] == 1))) { ?>
 
-                     <li <?php echo ($page == 'manage-apps' || $page == 'manage-pages' || $page == 'manage-stickers' || $page == 'add-new-sticker' || $page == 'manage-gifts' || $page == 'add-new-gift' || $page == 'manage-groups' || $page == 'manage-posts' || $page == 'manage-articles' || $page == 'manage-events'||  $page == 'manage-forum-sections' || $page == 'manage-forum-forums' || $page == 'manage-forum-threads' || $page == 'manage-forum-messages' || $page == 'create-new-forum' || $page == 'create-new-section' || $page == 'manage-movies' || $page == 'add-new-movies' || $page == 'manage-games' || $page == 'add-new-game' || $page == 'edit-movie' || $page == 'pages-categories' || $page == 'pages-sub-categories' || $page == 'groups-sub-categories' || $page == 'products-sub-categories' || $page == 'groups-categories' || $page == 'blogs-categories' || $page == 'products-categories' || $page == 'manage-fund' || $page == 'manage-jobs' || $page == 'manage-offers' || $page == 'pages-fields' || $page == 'groups-fields' || $page == 'products-fields') ? 'class="open"' : ''; ?>>
+                     <li <?php echo ($page == 'manage-apps' || $page == 'manage-pages' || $page == 'manage-stickers' || $page == 'add-new-sticker' || $page == 'manage-gifts' || $page == 'add-new-gift' || $page == 'manage-groups' || $page == 'manage-posts' || $page == 'manage-articles' || $page == 'manage-events' || $page == 'manage-forum-sections' || $page == 'manage-forum-forums' || $page == 'manage-forum-threads' || $page == 'manage-forum-messages' || $page == 'create-new-forum' || $page == 'create-new-section' || $page == 'manage-movies' || $page == 'add-new-movies' || $page == 'manage-games' || $page == 'add-new-game' || $page == 'edit-movie' || $page == 'pages-categories' || $page == 'pages-sub-categories' || $page == 'groups-sub-categories' || $page == 'products-sub-categories' || $page == 'groups-categories' || $page == 'blogs-categories' || $page == 'products-categories' || $page == 'manage-fund' || $page == 'manage-jobs' || $page == 'manage-offers' || $page == 'pages-fields' || $page == 'groups-fields' || $page == 'products-fields') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
                                 <i class="material-icons">view_agenda</i>
@@ -800,14 +789,24 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 <a <?php echo ($page == 'manage-events') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('manage-events'); ?>" data-ajax="?path=manage-events">Events</a>
                             </li>
                             <?php } ?>
+
                                 <li>
                                     <a <?php echo ($page == 'manage-events') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('manage-content-monetization'); ?>" data-ajax="?path=manage-content-monetization">Content Monetization</a>
                                 </li>
-                                <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['website_mode'] == 1)) { ?>
-                                <li>
-                                    <a <?php echo ($page == 'reels_settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('reels_settings'); ?>" data-ajax="?path=reels_settings">Reels settings</a>
+    
+                                <li <?php echo ($page == 'reels_settings' || $page == 'advertisement-reel') ? 'class="open"' : ''; ?>>
+                                    <a href="javascript:void(0);">Reels</a>
+                                    <ul class="ml-menu">
+                                            <li>
+                                                <a <?php echo ($page == 'reels_settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('reels_settings'); ?>" data-ajax="?path=reels_settings">Reels settings</a>
+                                            </li>   
+                                            <?php if ($is_admin) { ?>
+                                                <li>
+                                                    <a <?php echo ($page == 'advertisement-reel') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('advertisement-reel'); ?>" data-ajax="?path=advertisement-reel">Advertisment reels</a>
+                                                </li>
+                                            <?php }?>
+                                    </ul>
                                 </li>
-                                <?php } ?>
 
                             <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['store-settings'] == 1 || $wo['user']['permission']['manage-products'] == 1 || $wo['user']['permission']['manage-orders'] == 1 || $wo['user']['permission']['manage-reviews'] == 1))) { ?>
                             <li <?php echo ($page == 'store-settings' || $page == 'manage-products' || $page == 'manage-orders' || $page == 'manage-reviews') ? 'class="open"' : ''; ?>>
@@ -853,7 +852,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
 
 
 
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-forum-sections'] == 1 || $wo['user']['permission']['manage-forum-forums'] == 1 || $wo['user']['permission']['manage-forum-threads'] == 1 || $wo['user']['permission']['manage-forum-messages'] == 1 || $wo['user']['permission']['create-new-forum'] == 1 || $wo['user']['permission']['create-new-section'] == 1 ))) { ?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-forum-sections'] == 1 || $wo['user']['permission']['manage-forum-forums'] == 1 || $wo['user']['permission']['manage-forum-threads'] == 1 || $wo['user']['permission']['manage-forum-messages'] == 1 || $wo['user']['permission']['create-new-forum'] == 1 || $wo['user']['permission']['create-new-section'] == 1))) { ?>
                             <li <?php echo ($page == 'manage-forum-sections' || $page == 'manage-forum-forums' || $page == 'manage-forum-threads' || $page == 'manage-forum-messages' || $page == 'create-new-forum' || $page == 'create-new-section') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Forums</a>
                                 <ul class="ml-menu">
@@ -903,7 +902,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 </ul>
                             </li>
                             <?php } ?>
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-movies'] == 1 || $wo['user']['permission']['add-new-movies'] == 1 ))) { ?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-movies'] == 1 || $wo['user']['permission']['add-new-movies'] == 1))) { ?>
                             <li <?php echo ($page == 'manage-movies' || $page == 'add-new-movies') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Movies</a>
                                 <ul class="ml-menu">
@@ -924,7 +923,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 </ul>
                             </li>
                             <?php } ?>
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-games'] == 1 || $wo['user']['permission']['add-new-game'] == 1 ))) { ?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-games'] == 1 || $wo['user']['permission']['add-new-game'] == 1))) { ?>
 
                             <li <?php echo ($page == 'manage-games' || $page == 'add-new-game') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Games</a>
@@ -946,7 +945,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 </ul>
                             </li>
                             <?php } ?>
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['pages-categories'] == 1 || $wo['user']['permission']['pages-sub-categories'] == 1 || $wo['user']['permission']['groups-sub-categories'] == 1 || $wo['user']['permission']['products-sub-categories'] == 1 || $wo['user']['permission']['groups-categories'] == 1 || $wo['user']['permission']['blogs-categories'] == 1 || $wo['user']['permission']['products-categories'] == 1 ))) { ?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['pages-categories'] == 1 || $wo['user']['permission']['pages-sub-categories'] == 1 || $wo['user']['permission']['groups-sub-categories'] == 1 || $wo['user']['permission']['products-sub-categories'] == 1 || $wo['user']['permission']['groups-categories'] == 1 || $wo['user']['permission']['blogs-categories'] == 1 || $wo['user']['permission']['products-categories'] == 1))) { ?>
                             <li <?php echo ($page == 'pages-categories' || $page == 'pages-sub-categories' || $page == 'groups-sub-categories' || $page == 'products-sub-categories' || $page == 'groups-categories' || $page == 'blogs-categories' || $page == 'products-categories') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Categories</a>
                                 <ul class="ml-menu">
@@ -1009,8 +1008,8 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 </ul>
                             </li>
                             <?php } ?>
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['add-new-gift'] == 1 || $wo['user']['permission']['manage-gifts'] == 1 ))) { ?>
-                            <?php if ($wo['config']['gift_system'] == 1){?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['add-new-gift'] == 1 || $wo['user']['permission']['manage-gifts'] == 1))) { ?>
+                            <?php if ($wo['config']['gift_system'] == 1) {?>
                             <li <?php echo ($page == 'manage-gifts' || $page == 'add-new-gift') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Gifts</a>
                                 <ul class="ml-menu">
@@ -1033,8 +1032,8 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                             <?php } ?>
                             <?php } ?>
 
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-stickers'] == 1 || $wo['user']['permission']['add-new-sticker'] == 1 ))) { ?>
-                            <?php if ($wo['config']['stickers_system'] == 1){?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-stickers'] == 1 || $wo['user']['permission']['add-new-sticker'] == 1))) { ?>
+                            <?php if ($wo['config']['stickers_system'] == 1) {?>
                             <li <?php echo ($page == 'manage-stickers' || $page == 'add-new-sticker') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Stickers</a>
                                 <ul class="ml-menu">
@@ -1056,7 +1055,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                             </li>
                             <?php } ?>
                             <?php } ?>
-                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['pages-fields'] == 1 || $wo['user']['permission']['groups-fields'] == 1 || $wo['user']['permission']['products-fields'] == 1 || $wo['user']['permission']['manage-profile-fields'] == 1 ))) { ?>
+                            <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['pages-fields'] == 1 || $wo['user']['permission']['groups-fields'] == 1 || $wo['user']['permission']['products-fields'] == 1 || $wo['user']['permission']['manage-profile-fields'] == 1))) { ?>
                             <li <?php echo ($page == 'pages-fields' || $page == 'groups-fields' || $page == 'products-fields' || $page == 'manage-profile-fields') ? 'class="open"' : ''; ?>>
                                 <a href="javascript:void(0);">Custom Fields</a>
                                 <ul class="ml-menu">
@@ -1092,7 +1091,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-languages'] == 1 || $wo['user']['permission']['add-language'] == 1 || $wo['user']['permission']['edit-lang'] == 1 ))) { ?>
+                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-languages'] == 1 || $wo['user']['permission']['add-language'] == 1 || $wo['user']['permission']['edit-lang'] == 1))) { ?>
                     <li <?php echo ($page == 'manage-languages' || $page == 'add-language' || $page == 'edit-lang') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
@@ -1173,7 +1172,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['ads-settings'] == 1 || $wo['user']['permission']['manage-site-ads'] == 1 || $wo['user']['permission']['manage-user-ads'] == 1 || $wo['user']['permission']['bank-receipts'] == 1 || $wo['user']['permission']['payment-settings'] == 1 || $wo['user']['permission']['manage-currencies'] == 1 ))) { ?>
+                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['ads-settings'] == 1 || $wo['user']['permission']['manage-site-ads'] == 1 || $wo['user']['permission']['manage-user-ads'] == 1 || $wo['user']['permission']['bank-receipts'] == 1 || $wo['user']['permission']['payment-settings'] == 1 || $wo['user']['permission']['manage-currencies'] == 1))) { ?>
                     <li <?php echo ($page == 'ads-settings' || $page == 'manage-site-ads' || $page == 'manage-user-ads' || $page == 'bank-receipts' || $page == 'payment-settings' || $page == 'manage-currencies') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
@@ -1359,7 +1358,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['edit-terms-pages'] == 1 || $wo['user']['permission']['manage_terms_pages'] == 1 || $wo['user']['permission']['manage-custom-pages'] == 1 || $wo['user']['permission']['add-new-custom-page'] == 1 || $wo['user']['permission']['edit-custom-page'] == 1 ))) { ?>
+                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['edit-terms-pages'] == 1 || $wo['user']['permission']['manage_terms_pages'] == 1 || $wo['user']['permission']['manage-custom-pages'] == 1 || $wo['user']['permission']['add-new-custom-page'] == 1 || $wo['user']['permission']['edit-custom-page'] == 1))) { ?>
                     <li <?php echo ($page == 'edit-terms-pages' || $page == 'manage_terms_pages' || $page == 'manage-custom-pages' || $page == 'add-new-custom-page' || $page == 'edit-custom-page') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
@@ -1381,7 +1380,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                         </ul>
                     </li>
                     <?php } ?>
-                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-reports'] == 1 || $wo['user']['permission']['user_reports'] == 1 ))) { ?>
+                    <?php if ($is_admin || ($is_moderoter && ($wo['user']['permission']['manage-reports'] == 1 || $wo['user']['permission']['user_reports'] == 1))) { ?>
                     <li <?php echo ($page == 'manage-reports' || $page == 'user_reports') ? 'class="open"' : ''; ?>>
                         <a href="#">
                             <span class="nav-link-icon">
@@ -1483,7 +1482,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                     <a class="pow_link" href="../" target="_blank">
                         <p>Powered by</p>
                         <img src="../logo.png">
-                        <b class="badge">v<?php echo $wo['config']['version'];?></b>
+                        <b class="badge">v<?php echo $wo['config']['version']; ?></b>
                     </a>
                 </ul>
             </div>
@@ -1506,16 +1505,18 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
 <!-- ./ Layout wrapper -->
 <div class="select_pro_model"></div>
 <script src="<?php echo Wo_LoadAdminLink('vendors/sweetalert/sweetalert.min.js'); ?>"></script>
-<script src="<?php echo(Wo_LoadAdminLink('vendors/select2/js/select2.min.js')) ?>"></script>
-    <script src="<?php echo(Wo_LoadAdminLink('assets/js/examples/select2.js')) ?>"></script>
-    <script src="<?php echo(Wo_LoadAdminLink('assets/js/app.min.js')) ?>"></script>
+<script src="<?php echo Wo_LoadAdminLink('vendors/select2/js/select2.min.js'); ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('assets/js/examples/select2.js'); ?>"></script>
+    <script src="<?php echo Wo_LoadAdminLink('assets/js/app.min.js'); ?>"></script>
     <script type="text/javascript">
         function showEncryptedAlert() {
-            <?php foreach ($wo['encryptedKeys'] as $key => $value) {  if (!empty($wo['hiddenConfig'][$value])) { ?> 
-                if ($(".alert_<?php echo($value) ?>").length == 0) {
-                    $("input[name='<?php echo($value) ?>']").before('<div class="alert alert-danger alert_<?php echo($value) ?>" role="alert">The secret key is not showing due security reasons, you can still overwrite the current one.</div>');
+            <?php foreach ($wo['encryptedKeys'] as $key => $value) {
+                if (!empty($wo['hiddenConfig'][$value])) { ?> 
+                if ($(".alert_<?php echo $value; ?>").length == 0) {
+                    $("input[name='<?php echo $value; ?>']").before('<div class="alert alert-danger alert_<?php echo $value; ?>" role="alert">The secret key is not showing due security reasons, you can still overwrite the current one.</div>');
                 }
-            <?php } } ?>
+            <?php }
+                } ?>
         }
         function Wo_SubmitSelectProForm(self) {
             let form_select_pro = $('.SelectProModalForm');
@@ -1655,7 +1656,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                     }
                 }
             };
-            jQuery.fn.highlight("<?php echo (!empty($_GET['highlight']) ? $_GET['highlight'] : '') ?>",'highlight_text');
+            jQuery.fn.highlight("<?php echo !empty($_GET['highlight']) ? $_GET['highlight'] : ''; ?>",'highlight_text');
             $.get(Wo_Ajax_Requests_File(),{f:'admin_setting', s:'exchange'});
         });
         $(document).on('click', '#search_for_bar a', function(event) {

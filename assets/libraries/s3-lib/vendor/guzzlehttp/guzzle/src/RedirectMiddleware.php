@@ -222,7 +222,7 @@ class RedirectMiddleware
         if (!\in_array($location->getScheme(), $protocols)) {
             throw new BadResponseException(\sprintf('Redirect URI, %s, does not use one of the allowed redirect protocols: %s', $location, \implode(', ', $protocols)), $request, $response);
         }
-
+        
         return $location;
     }
 }

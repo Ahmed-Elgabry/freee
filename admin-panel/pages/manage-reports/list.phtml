@@ -12,7 +12,7 @@
  
    </td>
    <td>
-      <?php if ($wo['report']['type'] == 'post'): ?>
+      <?php if ($wo['report']['type'] == 'post' || $wo['report']['type'] == 'reel'): ?>
          <a href="<?php echo $wo['report']['story']['url']; ?>">
            <?php echo $wo['lang']['open_post'];?>
          </a>
@@ -41,7 +41,7 @@
    </td>
    <td>
       <button class="btn bg-success admn_table_btn" onclick="Wo_MarkSafeReportedPost(<?php echo $wo['report']['id']?>,'hide');">Mark Safe</button>
-      <?php if ($wo['report']['type'] == 'post'): ?>
+      <?php if ($wo['report']['type'] == 'post' || $wo['report']['type'] == 'reel'): ?>
          <button class="btn bg-danger admn_table_btn" onclick="Wo_DeleteReportedContent(<?php echo $wo['report']['story']['id']?>,<?php echo $wo['report']['id']?>,'post','hide');">Delete</button>
       <?php elseif($wo['report']['type'] == 'profile'): ?>
           <button class="btn bg-danger admn_table_btn" onclick="Wo_DeleteReportedContent(<?php echo $wo['report']['user']['id']?>,<?php echo $wo['report']['id']?>,'user','hide');">Delete</button>

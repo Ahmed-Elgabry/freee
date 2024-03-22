@@ -183,8 +183,7 @@ class RedirectMiddleware
         // not forcing RFC compliance, but rather emulating what all browsers
         // would do.
         $statusCode = $response->getStatusCode();
-        if ($statusCode == 303 ||
-            ($statusCode <= 302 && !$options['allow_redirects']['strict'])
+        if ($statusCode == 303 || ($statusCode <= 302 && !$options['allow_redirects']['strict'])
         ) {
             $modify['method'] = 'GET';
             $modify['body'] = '';

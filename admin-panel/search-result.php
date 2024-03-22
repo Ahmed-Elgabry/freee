@@ -1,4256 +1,3552 @@
 <?php
 
-$pages_search = array (
-  0 => 
-  array (
+$pages_search = [
+  0 => [
     'link' => 'add-language',
     'title' => 'Language Name',
     'page_title' => '',
-  ),
-  1 => 
-  array (
+  ],
+  1 => [
     'link' => 'add-language',
     'title' => 'Direction',
     'page_title' => '',
-  ),
-  2 => 
-  array (
+  ],
+  2 => [
     'link' => 'add-language',
     'title' => 'Key Name ',
     'page_title' => '',
-  ),
-  3 => 
-  array (
+  ],
+  3 => [
     'link' => 'add-new-custom-page',
     'title' => 'Page Type',
     'page_title' => '',
-  ),
-  4 => 
-  array (
+  ],
+  4 => [
     'link' => 'add-new-game',
     'title' => 'Game URL',
     'page_title' => '',
-  ),
-  5 => 
-  array (
+  ],
+  5 => [
     'link' => 'add-new-game',
     'title' => 'Game Image URL',
     'page_title' => '',
-  ),
-  6 => 
-  array (
+  ],
+  6 => [
     'link' => 'add-new-game',
     'title' => 'Game Name',
     'page_title' => '',
-  ),
-  7 => 
-  array (
+  ],
+  7 => [
     'link' => 'add-new-gift',
     'title' => 'Gift Name URL',
     'page_title' => '',
-  ),
-  8 => 
-  array (
+  ],
+  8 => [
     'link' => 'add-new-gift',
     'title' => 'Gift File',
     'page_title' => '',
-  ),
-  9 => 
-  array (
+  ],
+  9 => [
     'link' => 'add-new-movies',
     'title' => 'Movie Title',
     'page_title' => '',
-  ),
-  10 => 
-  array (
+  ],
+  10 => [
     'link' => 'add-new-movies',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  11 => 
-  array (
+  ],
+  11 => [
     'link' => 'add-new-movies',
     'title' => 'Movie Source',
     'page_title' => '',
-  ),
-  12 => 
-  array (
+  ],
+  12 => [
     'link' => 'add-new-movies',
     'title' => 'Stars',
     'page_title' => '',
-  ),
-  13 => 
-  array (
+  ],
+  13 => [
     'link' => 'add-new-movies',
     'title' => 'Producer',
     'page_title' => '',
-  ),
-  14 => 
-  array (
+  ],
+  14 => [
     'link' => 'add-new-movies',
     'title' => 'Release',
     'page_title' => '',
-  ),
-  15 => 
-  array (
+  ],
+  15 => [
     'link' => 'add-new-movies',
     'title' => 'Duration',
     'page_title' => '',
-  ),
-  16 => 
-  array (
+  ],
+  16 => [
     'link' => 'add-new-movies',
     'title' => 'Country',
     'page_title' => '',
-  ),
-  17 => 
-  array (
+  ],
+  17 => [
     'link' => 'add-new-movies',
     'title' => 'Quality',
     'page_title' => '',
-  ),
-  18 => 
-  array (
+  ],
+  18 => [
     'link' => 'add-new-movies',
     'title' => 'Genre',
     'page_title' => '',
-  ),
-  19 => 
-  array (
+  ],
+  19 => [
     'link' => 'add-new-movies',
     'title' => 'Rating',
     'page_title' => '',
-  ),
-  20 => 
-  array (
+  ],
+  20 => [
     'link' => 'add-new-profile-field',
     'title' => 'Field Type',
     'page_title' => '',
-  ),
-  21 => 
-  array (
+  ],
+  21 => [
     'link' => 'add-new-profile-field',
     'title' => 'Field Name',
     'page_title' => '',
-  ),
-  22 => 
-  array (
+  ],
+  22 => [
     'link' => 'add-new-profile-field',
     'title' => 'Field Length',
     'page_title' => '',
-  ),
-  23 => 
-  array (
+  ],
+  23 => [
     'link' => 'add-new-profile-field',
     'title' => 'Field Description',
     'page_title' => '',
-  ),
-  24 => 
-  array (
+  ],
+  24 => [
     'link' => 'add-new-profile-field',
     'title' => 'Field placement',
     'page_title' => '',
-  ),
-  25 => 
-  array (
+  ],
+  25 => [
     'link' => 'add-new-profile-field',
     'title' => 'Show On The Registration Page',
     'page_title' => '',
-  ),
-  26 => 
-  array (
+  ],
+  26 => [
     'link' => 'add-new-profile-field',
     'title' => 'Show On User Profile Page',
     'page_title' => '',
-  ),
-  27 => 
-  array (
+  ],
+  27 => [
     'link' => 'add-new-profile-field',
     'title' => 'Select Field Options',
     'page_title' => '',
-  ),
-  28 => 
-  array (
+  ],
+  28 => [
     'link' => 'add-new-sticker',
     'title' => 'Sticker Name',
     'page_title' => '',
-  ),
-  29 => 
-  array (
+  ],
+  29 => [
     'link' => 'ads-settings',
     'title' => 'Advertisements System',
     'page_title' => '',
-  ),
-  30 => 
-  array (
+  ],
+  30 => [
     'link' => 'ads-settings',
     'title' => 'Cost By View',
     'page_title' => '',
-  ),
-  31 => 
-  array (
+  ],
+  31 => [
     'link' => 'ads-settings',
     'title' => 'Cost By Click',
     'page_title' => '',
-  ),
-  32 => 
-  array (
+  ],
+  32 => [
     'link' => 'ads-settings',
     'title' => 'Video ads skip button seconds',
     'page_title' => '',
-  ),
-  33 => 
-  array (
+  ],
+  33 => [
     'link' => 'ads-settings',
     'title' => 'Amount',
     'page_title' => '',
-  ),
-  34 => 
-  array (
+  ],
+  34 => [
     'link' => 'ads-settings',
     'title' => 'View Cost',
     'page_title' => '',
-  ),
-  35 => 
-  array (
+  ],
+  35 => [
     'link' => 'ads-settings',
     'title' => 'Click Cost',
     'page_title' => '',
-  ),
-  36 => 
-  array (
+  ],
+  36 => [
     'link' => 'affiliates-settings',
     'title' => 'Affiliates System',
     'page_title' => '',
-  ),
-  37 => 
-  array (
+  ],
+  37 => [
     'link' => 'affiliates-settings',
     'title' => 'User will earn money when',
     'page_title' => '',
-  ),
-  38 => 
-  array (
+  ],
+  38 => [
     'link' => 'affiliates-settings',
     'title' => 'Amount',
     'page_title' => '',
-  ),
-  39 => 
-  array (
+  ],
+  39 => [
     'link' => 'affiliates-settings',
     'title' => 'Amount %',
     'page_title' => '',
-  ),
-  40 => 
-  array (
+  ],
+  40 => [
     'link' => 'affiliates-settings',
     'title' => 'Affiliate Level',
     'page_title' => '',
-  ),
-  41 => 
-  array (
+  ],
+  41 => [
     'link' => 'ai-settings',
     'title' => 'OpenAI API key',
     'page_title' => '',
-  ),
-  42 => 
-  array (
+  ],
+  42 => [
     'link' => 'ai-settings',
     'title' => 'OpenAI text model',
     'page_title' => '',
-  ),
-  43 => 
-  array (
+  ],
+  43 => [
     'link' => 'ai-settings',
     'title' => 'AI Images System',
     'page_title' => '',
-  ),
-  44 => 
-  array (
+  ],
+  44 => [
     'link' => 'ai-settings',
     'title' => 'AI Images API',
     'page_title' => '',
-  ),
-  45 => 
-  array (
+  ],
+  45 => [
     'link' => 'ai-settings',
     'title' => 'AI Post System',
     'page_title' => '',
-  ),
-  46 => 
-  array (
+  ],
+  46 => [
     'link' => 'ai-settings',
     'title' => 'AI Posts API',
     'page_title' => '',
-  ),
-  47 => 
-  array (
+  ],
+  47 => [
     'link' => 'ai-settings',
     'title' => 'AI Blog System',
     'page_title' => '',
-  ),
-  48 => 
-  array (
+  ],
+  48 => [
     'link' => 'ai-settings',
     'title' => 'AI Blog API',
     'page_title' => '',
-  ),
-  49 => 
-  array (
+  ],
+  49 => [
     'link' => 'ai-settings',
     'title' => 'AI Avatar/Cover System',
     'page_title' => '',
-  ),
-  50 => 
-  array (
+  ],
+  50 => [
     'link' => 'ai-settings',
     'title' => 'AI Avatar/Cover Images API',
     'page_title' => '',
-  ),
-  51 => 
-  array (
+  ],
+  51 => [
     'link' => 'ai-settings',
     'title' => 'Replicate Model',
     'page_title' => '',
-  ),
-  52 => 
-  array (
+  ],
+  52 => [
     'link' => 'ai-settings',
     'title' => 'Replicate API Token',
     'page_title' => '',
-  ),
-  53 => 
-  array (
+  ],
+  53 => [
     'link' => 'ai-settings',
     'title' => 'num_inference_steps',
     'page_title' => '',
-  ),
-  54 => 
-  array (
+  ],
+  54 => [
     'link' => 'ai-settings',
     'title' => 'guidance_scale',
     'page_title' => '',
-  ),
-  55 => 
-  array (
+  ],
+  55 => [
     'link' => 'ai-settings',
     'title' => 'seed',
     'page_title' => '',
-  ),
-  56 => 
-  array (
+  ],
+  56 => [
     'link' => 'ai-settings',
     'title' => 'scheduler',
     'page_title' => '',
-  ),
-  57 => 
-  array (
+  ],
+  57 => [
     'link' => 'ai-settings',
     'title' => 'prompt_strength',
     'page_title' => '',
-  ),
-  58 => 
-  array (
+  ],
+  58 => [
     'link' => 'ai-settings',
     'title' => 'negative_prompt',
     'page_title' => '',
-  ),
-  59 => 
-  array (
+  ],
+  59 => [
     'link' => 'ai-settings',
     'title' => 'Credit Price',
     'page_title' => '',
-  ),
-  60 => 
-  array (
+  ],
+  60 => [
     'link' => 'ai-settings',
     'title' => 'AI Images Credit System',
     'page_title' => '',
-  ),
-  61 => 
-  array (
+  ],
+  61 => [
     'link' => 'ai-settings',
     'title' => 'Generated Image Price',
     'page_title' => '',
-  ),
-  62 => 
-  array (
+  ],
+  62 => [
     'link' => 'ai-settings',
     'title' => 'AI Text Credit System',
     'page_title' => '',
-  ),
-  63 => 
-  array (
+  ],
+  63 => [
     'link' => 'ai-settings',
     'title' => 'Generated Word Price',
     'page_title' => '',
-  ),
-  64 => 
-  array (
+  ],
+  64 => [
     'link' => 'amazon-settings',
     'title' => 'File Upload & Sharing',
     'page_title' => '',
-  ),
-  65 => 
-  array (
+  ],
+  65 => [
     'link' => 'amazon-settings',
     'title' => 'Video Upload & Sharing',
     'page_title' => '',
-  ),
-  66 => 
-  array (
+  ],
+  66 => [
     'link' => 'amazon-settings',
     'title' => 'Reels Upload',
     'page_title' => '',
-  ),
-  67 => 
-  array (
+  ],
+  67 => [
     'link' => 'amazon-settings',
     'title' => 'Audio Upload & Sharing',
     'page_title' => '',
-  ),
-  68 => 
-  array (
+  ],
+  68 => [
     'link' => 'amazon-settings',
     'title' => 'CSS Upload & Modifications',
     'page_title' => '',
-  ),
-  69 => 
-  array (
+  ],
+  69 => [
     'link' => 'amazon-settings',
     'title' => 'Allowed Extenstions',
     'page_title' => '',
-  ),
-  70 => 
-  array (
+  ],
+  70 => [
     'link' => 'amazon-settings',
     'title' => 'Allowed MIME Types',
     'page_title' => '',
-  ),
-  71 => 
-  array (
+  ],
+  71 => [
     'link' => 'amazon-settings',
     'title' => 'Max Upload Size',
     'page_title' => '',
-  ),
-  72 => 
-  array (
+  ],
+  72 => [
     'link' => 'amazon-settings',
     'title' => 'Image Compression Level',
     'page_title' => '',
-  ),
-  73 => 
-  array (
+  ],
+  73 => [
     'link' => 'amazon-settings',
     'title' => 'FFMPEG System',
     'page_title' => '',
-  ),
-  74 => 
-  array (
+  ],
+  74 => [
     'link' => 'amazon-settings',
     'title' => 'FFMPEG Binary File Path',
     'page_title' => '',
-  ),
-  75 => 
-  array (
+  ],
+  75 => [
     'link' => 'amazon-settings',
     'title' => 'Convert video speed',
     'page_title' => '',
-  ),
-  76 => 
-  array (
+  ],
+  76 => [
     'link' => 'amazon-settings',
     'title' => 'Allowed Extenstions',
     'page_title' => '',
-  ),
-  77 => 
-  array (
+  ],
+  77 => [
     'link' => 'amazon-settings',
     'title' => 'Allowed MIME Types',
     'page_title' => '',
-  ),
-  78 => 
-  array (
+  ],
+  78 => [
     'link' => 'amazon-settings',
     'title' => 'Debug Log',
     'page_title' => '',
-  ),
-  79 => 
-  array (
+  ],
+  79 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon S3 Storage',
     'page_title' => '',
-  ),
-  80 => 
-  array (
+  ],
+  80 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon Bucket Name',
     'page_title' => '',
-  ),
-  81 => 
-  array (
+  ],
+  81 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon S3 Key',
     'page_title' => '',
-  ),
-  82 => 
-  array (
+  ],
+  82 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon S3 Secret Key',
     'page_title' => '',
-  ),
-  83 => 
-  array (
+  ],
+  83 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon S3 Custom Endpoint (Optional)',
     'page_title' => '',
-  ),
-  84 => 
-  array (
+  ],
+  84 => [
     'link' => 'amazon-settings',
     'title' => 'Amazon S3 Bucket Region',
     'page_title' => '',
-  ),
-  85 => 
-  array (
+  ],
+  85 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean Spaces Storage',
     'page_title' => '',
-  ),
-  86 => 
-  array (
+  ],
+  86 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean Space Name',
     'page_title' => '',
-  ),
-  87 => 
-  array (
+  ],
+  87 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean Key',
     'page_title' => '',
-  ),
-  88 => 
-  array (
+  ],
+  88 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean Secret',
     'page_title' => '',
-  ),
-  89 => 
-  array (
+  ],
+  89 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean Custom Endpoint (Optional)',
     'page_title' => '',
-  ),
-  90 => 
-  array (
+  ],
+  90 => [
     'link' => 'amazon-settings',
     'title' => 'Digitalocean bucket region',
     'page_title' => '',
-  ),
-  91 => 
-  array (
+  ],
+  91 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi Storage',
     'page_title' => '',
-  ),
-  92 => 
-  array (
+  ],
+  92 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi Bucket Name',
     'page_title' => '',
-  ),
-  93 => 
-  array (
+  ],
+  93 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi Access Key',
     'page_title' => '',
-  ),
-  94 => 
-  array (
+  ],
+  94 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi Secret Key',
     'page_title' => '',
-  ),
-  95 => 
-  array (
+  ],
+  95 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi Custom Endpoint (Optional)',
     'page_title' => '',
-  ),
-  96 => 
-  array (
+  ],
+  96 => [
     'link' => 'amazon-settings',
     'title' => 'Wasabi bucket region',
     'page_title' => '',
-  ),
-  97 => 
-  array (
+  ],
+  97 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Storage',
     'page_title' => '',
-  ),
-  98 => 
-  array (
+  ],
+  98 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Hostname',
     'page_title' => '',
-  ),
-  99 => 
-  array (
+  ],
+  99 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Username',
     'page_title' => '',
-  ),
-  100 => 
-  array (
+  ],
+  100 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Password',
     'page_title' => '',
-  ),
-  101 => 
-  array (
+  ],
+  101 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Port',
     'page_title' => '',
-  ),
-  102 => 
-  array (
+  ],
+  102 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Path',
     'page_title' => '',
-  ),
-  103 => 
-  array (
+  ],
+  103 => [
     'link' => 'amazon-settings',
     'title' => 'FTP Endpoint',
     'page_title' => '',
-  ),
-  104 => 
-  array (
+  ],
+  104 => [
     'link' => 'amazon-settings',
     'title' => 'Google Cloud Storage',
     'page_title' => '',
-  ),
-  105 => 
-  array (
+  ],
+  105 => [
     'link' => 'amazon-settings',
     'title' => 'Google Cloud Bucket Name',
     'page_title' => '',
-  ),
-  106 => 
-  array (
+  ],
+  106 => [
     'link' => 'amazon-settings',
     'title' => 'Google Cloud File',
     'page_title' => '',
-  ),
-  107 => 
-  array (
+  ],
+  107 => [
     'link' => 'amazon-settings',
     'title' => 'Google Cloud File Path',
     'page_title' => '',
-  ),
-  108 => 
-  array (
+  ],
+  108 => [
     'link' => 'amazon-settings',
     'title' => 'Google Cloud Custom Endpoint (Optional)',
     'page_title' => '',
-  ),
-  109 => 
-  array (
+  ],
+  109 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Storage',
     'page_title' => '',
-  ),
-  110 => 
-  array (
+  ],
+  110 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Bucket ID',
     'page_title' => '',
-  ),
-  111 => 
-  array (
+  ],
+  111 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Bucket Name',
     'page_title' => '',
-  ),
-  112 => 
-  array (
+  ],
+  112 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Bucket Region',
     'page_title' => '',
-  ),
-  113 => 
-  array (
+  ],
+  113 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Access Key ID',
     'page_title' => '',
-  ),
-  114 => 
-  array (
+  ],
+  114 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Access Key',
     'page_title' => '',
-  ),
-  115 => 
-  array (
+  ],
+  115 => [
     'link' => 'amazon-settings',
     'title' => 'Backblaze Custom Endpoint (Optional)',
     'page_title' => '',
-  ),
-  116 => 
-  array (
+  ],
+  116 => [
     'link' => 'auto-delete',
     'title' => 'Select what you would like to delete',
     'page_title' => '',
-  ),
-  117 => 
-  array (
+  ],
+  117 => [
     'link' => 'auto-friend',
     'title' => 'Username(s), sperated by a comma (,)',
     'page_title' => '',
-  ),
-  118 => 
-  array (
+  ],
+  118 => [
     'link' => 'auto-join',
     'title' => 'Group name(s), sperated by a comma (,)',
     'page_title' => '',
-  ),
-  119 => 
-  array (
+  ],
+  119 => [
     'link' => 'auto-like',
     'title' => 'Page name(s), sperated by a comma (,)',
     'page_title' => '',
-  ),
-  120 => 
-  array (
+  ],
+  120 => [
     'link' => 'ban-users',
     'title' => 'IP Address, Email Address, E-mail range  or Username',
     'page_title' => '',
-  ),
-  121 => 
-  array (
+  ],
+  121 => [
     'link' => 'ban-users',
     'title' => '
                                         Search for IP
                                       ',
     'page_title' => '',
-  ),
-  122 => 
-  array (
+  ],
+  122 => [
     'link' => 'ban-users',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  123 => 
-  array (
+  ],
+  123 => [
     'link' => 'ban-users',
     'title' => '',
     'page_title' => '',
-  ),
-  124 => 
-  array (
+  ],
+  124 => [
     'link' => 'blogs-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  125 => 
-  array (
+  ],
+  125 => [
     'link' => 'create-new-forum',
     'title' => 'Name',
     'page_title' => '',
-  ),
-  126 => 
-  array (
+  ],
+  126 => [
     'link' => 'create-new-forum',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  127 => 
-  array (
+  ],
+  127 => [
     'link' => 'create-new-forum',
     'title' => 'Section',
     'page_title' => '',
-  ),
-  128 => 
-  array (
+  ],
+  128 => [
     'link' => 'create-new-section',
     'title' => 'Name',
     'page_title' => '',
-  ),
-  129 => 
-  array (
+  ],
+  129 => [
     'link' => 'create-new-section',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  130 => 
-  array (
+  ],
+  130 => [
     'link' => 'cronjob_settings',
     'title' => 'CronJob Command',
     'page_title' => '',
-  ),
-  131 => 
-  array (
+  ],
+  131 => [
     'link' => 'cronjob_settings',
     'title' => 'CronJob Last Run',
     'page_title' => '',
-  ),
-  132 => 
-  array (
+  ],
+  132 => [
     'link' => 'edit-forum',
     'title' => 'Name',
     'page_title' => '',
-  ),
-  133 => 
-  array (
+  ],
+  133 => [
     'link' => 'edit-forum',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  134 => 
-  array (
+  ],
+  134 => [
     'link' => 'edit-forum',
     'title' => 'Section',
     'page_title' => '',
-  ),
-  135 => 
-  array (
+  ],
+  135 => [
     'link' => 'edit-section',
     'title' => 'Name',
     'page_title' => '',
-  ),
-  136 => 
-  array (
+  ],
+  136 => [
     'link' => 'edit-section',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  137 => 
-  array (
+  ],
+  137 => [
     'link' => 'email-security',
     'title' => ' E-mail Security',
     'page_title' => ' E-mail Security',
-  ),
-  138 => 
-  array (
+  ],
+  138 => [
     'link' => 'email-security',
     'title' => 'Add E-mail Provider',
     'page_title' => ' E-mail Security',
-  ),
-  139 => 
-  array (
+  ],
+  139 => [
     'link' => 'email-security',
     'title' => 'Remove E-mail Provider',
     'page_title' => ' E-mail Security',
-  ),
-  140 => 
-  array (
+  ],
+  140 => [
     'link' => 'email-security',
     'title' => 'Provider (example: gmail)',
     'page_title' => ' E-mail Security',
-  ),
-  141 => 
-  array (
+  ],
+  141 => [
     'link' => 'email-security',
     'title' => 'Provider',
     'page_title' => ' E-mail Security',
-  ),
-  142 => 
-  array (
+  ],
+  142 => [
     'link' => 'email-settings',
     'title' => 'E-mail Server',
     'page_title' => '',
-  ),
-  143 => 
-  array (
+  ],
+  143 => [
     'link' => 'email-settings',
     'title' => 'Website Default E-mail',
     'page_title' => '',
-  ),
-  144 => 
-  array (
+  ],
+  144 => [
     'link' => 'email-settings',
     'title' => 'SMTP Host',
     'page_title' => '',
-  ),
-  145 => 
-  array (
+  ],
+  145 => [
     'link' => 'email-settings',
     'title' => 'SMTP Username',
     'page_title' => '',
-  ),
-  146 => 
-  array (
+  ],
+  146 => [
     'link' => 'email-settings',
     'title' => 'SMTP Password',
     'page_title' => '',
-  ),
-  147 => 
-  array (
+  ],
+  147 => [
     'link' => 'email-settings',
     'title' => 'SMTP Port',
     'page_title' => '',
-  ),
-  148 => 
-  array (
+  ],
+  148 => [
     'link' => 'email-settings',
     'title' => 'SMTP Encryption',
     'page_title' => '',
-  ),
-  149 => 
-  array (
+  ],
+  149 => [
     'link' => 'email-settings',
     'title' => 'Default SMS Provider',
     'page_title' => '',
-  ),
-  150 => 
-  array (
+  ],
+  150 => [
     'link' => 'email-settings',
     'title' => 'Your Phone Number',
     'page_title' => '',
-  ),
-  151 => 
-  array (
+  ],
+  151 => [
     'link' => 'email-settings',
     'title' => 'BulkSMS Configuration',
     'page_title' => '',
-  ),
-  152 => 
-  array (
+  ],
+  152 => [
     'link' => 'email-settings',
     'title' => 'BulkSMS Eapi_URL',
     'page_title' => '',
-  ),
-  153 => 
-  array (
+  ],
+  153 => [
     'link' => 'email-settings',
     'title' => 'BulkSMS Username',
     'page_title' => '',
-  ),
-  154 => 
-  array (
+  ],
+  154 => [
     'link' => 'email-settings',
     'title' => 'BulkSMS Password',
     'page_title' => '',
-  ),
-  155 => 
-  array (
+  ],
+  155 => [
     'link' => 'email-settings',
     'title' => 'Twilio Configuration',
     'page_title' => '',
-  ),
-  156 => 
-  array (
+  ],
+  156 => [
     'link' => 'email-settings',
     'title' => 'Twilio account_sid',
     'page_title' => '',
-  ),
-  157 => 
-  array (
+  ],
+  157 => [
     'link' => 'email-settings',
     'title' => 'Twilio auth_token',
     'page_title' => '',
-  ),
-  158 => 
-  array (
+  ],
+  158 => [
     'link' => 'email-settings',
     'title' => 'Twilio Phone number',
     'page_title' => '',
-  ),
-  159 => 
-  array (
+  ],
+  159 => [
     'link' => 'email-settings',
     'title' => 'Infobip Configuration',
     'page_title' => '',
-  ),
-  160 => 
-  array (
+  ],
+  160 => [
     'link' => 'email-settings',
     'title' => 'Infobip API Key',
     'page_title' => '',
-  ),
-  161 => 
-  array (
+  ],
+  161 => [
     'link' => 'email-settings',
     'title' => 'Infobip Base URL',
     'page_title' => '',
-  ),
-  162 => 
-  array (
+  ],
+  162 => [
     'link' => 'email-settings',
     'title' => 'Msg91 Configuration',
     'page_title' => '',
-  ),
-  163 => 
-  array (
+  ],
+  163 => [
     'link' => 'email-settings',
     'title' => 'Msg91 AuthKey',
     'page_title' => '',
-  ),
-  164 => 
-  array (
+  ],
+  164 => [
     'link' => 'email-settings',
     'title' => 'Msg91 DLT ID',
     'page_title' => '',
-  ),
-  165 => 
-  array (
+  ],
+  165 => [
     'link' => 'email-settings',
     'title' => 'Debug Log',
     'page_title' => '',
-  ),
-  166 => 
-  array (
+  ],
+  166 => [
     'link' => 'fake-users',
     'title' => 'How many users you want to generate?',
     'page_title' => '',
-  ),
-  167 => 
-  array (
+  ],
+  167 => [
     'link' => 'fake-users',
     'title' => 'Password',
     'page_title' => '',
-  ),
-  168 => 
-  array (
+  ],
+  168 => [
     'link' => 'fake-users',
     'title' => 'Create Random Avatar?',
     'page_title' => '',
-  ),
-  169 => 
-  array (
+  ],
+  169 => [
     'link' => 'fake-users',
     'title' => 'Yes',
     'page_title' => '',
-  ),
-  170 => 
-  array (
+  ],
+  170 => [
     'link' => 'fake-users',
     'title' => 'No',
     'page_title' => '',
-  ),
-  171 => 
-  array (
+  ],
+  171 => [
     'link' => 'ffmpeg',
     'title' => 'FFMPEG System ',
     'page_title' => '',
-  ),
-  172 => 
-  array (
+  ],
+  172 => [
     'link' => 'ffmpeg',
     'title' => 'Enabled',
     'page_title' => '',
-  ),
-  173 => 
-  array (
+  ],
+  173 => [
     'link' => 'ffmpeg',
     'title' => 'Disabled',
     'page_title' => '',
-  ),
-  174 => 
-  array (
+  ],
+  174 => [
     'link' => 'ffmpeg',
     'title' => '
                                     FFmpeg binary file path: on Linux(/usr/bin/ffmpeg) or Windows(C:\\\\ffmpeg\\bin\\ffmpeg.exe)
                                 ',
     'page_title' => '',
-  ),
-  175 => 
-  array (
+  ],
+  175 => [
     'link' => 'ffmpeg',
     'title' => 'Convert video speed',
     'page_title' => '',
-  ),
-  176 => 
-  array (
+  ],
+  176 => [
     'link' => 'ffmpeg',
     'title' => 'Allowed extenstions (separated with comma,)',
     'page_title' => '',
-  ),
-  177 => 
-  array (
+  ],
+  177 => [
     'link' => 'ffmpeg',
     'title' => 'Allowed MIME Types (separated with comma,)',
     'page_title' => '',
-  ),
-  178 => 
-  array (
+  ],
+  178 => [
     'link' => 'ffmpeg',
     'title' => 'Debug FFMPEG',
     'page_title' => '',
-  ),
-  179 => 
-  array (
+  ],
+  179 => [
     'link' => 'general-settings',
     'title' => 'Developer Mode',
     'page_title' => '',
-  ),
-  180 => 
-  array (
+  ],
+  180 => [
     'link' => 'general-settings',
     'title' => 'Cache System',
     'page_title' => '',
-  ),
-  181 => 
-  array (
+  ],
+  181 => [
     'link' => 'general-settings',
     'title' => 'Maintenance Mode',
     'page_title' => '',
-  ),
-  182 => 
-  array (
+  ],
+  182 => [
     'link' => 'general-settings',
     'title' => 'SEO Friendly URL',
     'page_title' => '',
-  ),
-  183 => 
-  array (
+  ],
+  183 => [
     'link' => 'general-settings',
     'title' => 'Developers (API System)',
     'page_title' => '',
-  ),
-  184 => 
-  array (
+  ],
+  184 => [
     'link' => 'general-settings',
     'title' => 'Welcome Page Users',
     'page_title' => '',
-  ),
-  185 => 
-  array (
+  ],
+  185 => [
     'link' => 'general-settings',
     'title' => 'Default Language',
     'page_title' => '',
-  ),
-  186 => 
-  array (
+  ],
+  186 => [
     'link' => 'general-settings',
     'title' => 'Date Format',
     'page_title' => '',
-  ),
-  187 => 
-  array (
+  ],
+  187 => [
     'link' => 'general-settings',
     'title' => 'Landing Page',
     'page_title' => '',
-  ),
-  188 => 
-  array (
+  ],
+  188 => [
     'link' => 'general-settings',
     'title' => 'Online Users',
     'page_title' => '',
-  ),
-  189 => 
-  array (
+  ],
+  189 => [
     'link' => 'general-settings',
     'title' => 'User Last Seen Status',
     'page_title' => '',
-  ),
-  190 => 
-  array (
+  ],
+  190 => [
     'link' => 'general-settings',
     'title' => 'User Account Deletion',
     'page_title' => '',
-  ),
-  191 => 
-  array (
+  ],
+  191 => [
     'link' => 'general-settings',
     'title' => 'Profile Background Change ',
     'page_title' => '',
-  ),
-  192 => 
-  array (
+  ],
+  192 => [
     'link' => 'general-settings',
     'title' => 'Friends System',
     'page_title' => '',
-  ),
-  193 => 
-  array (
+  ],
+  193 => [
     'link' => 'general-settings',
     'title' => 'Connectivity System Limit',
     'page_title' => '',
-  ),
-  194 => 
-  array (
+  ],
+  194 => [
     'link' => 'general-settings',
     'title' => 'User Invite System',
     'page_title' => '',
-  ),
-  195 => 
-  array (
+  ],
+  195 => [
     'link' => 'general-settings',
     'title' => 'How many links can a user generate?',
     'page_title' => '',
-  ),
-  196 => 
-  array (
+  ],
+  196 => [
     'link' => 'general-settings',
     'title' => 'User can generate X links within?',
     'page_title' => '',
-  ),
-  197 => 
-  array (
+  ],
+  197 => [
     'link' => 'general-settings',
     'title' => 'Censored Words',
     'page_title' => '',
-  ),
-  198 => 
-  array (
+  ],
+  198 => [
     'link' => 'general-settings',
     'title' => 'Home Page Caching',
     'page_title' => '',
-  ),
-  199 => 
-  array (
+  ],
+  199 => [
     'link' => 'general-settings',
     'title' => 'Profile Page Caching',
     'page_title' => '',
-  ),
-  200 => 
-  array (
+  ],
+  200 => [
     'link' => 'general-settings',
     'title' => 'Exchangerate API Key',
     'page_title' => '',
-  ),
-  201 => 
-  array (
+  ],
+  201 => [
     'link' => 'general-settings',
     'title' => 'User Registration',
     'page_title' => '',
-  ),
-  202 => 
-  array (
+  ],
+  202 => [
     'link' => 'general-settings',
     'title' => 'Auto Username On Register',
     'page_title' => '',
-  ),
-  203 => 
-  array (
+  ],
+  203 => [
     'link' => 'general-settings',
     'title' => 'Password Complexity System',
     'page_title' => '',
-  ),
-  204 => 
-  array (
+  ],
+  204 => [
     'link' => 'general-settings',
     'title' => 'Unusual Login',
     'page_title' => '',
-  ),
-  205 => 
-  array (
+  ],
+  205 => [
     'link' => 'general-settings',
     'title' => 'Remember This Device',
     'page_title' => '',
-  ),
-  206 => 
-  array (
+  ],
+  206 => [
     'link' => 'general-settings',
     'title' => 'Two-factor authentication',
     'page_title' => '',
-  ),
-  207 => 
-  array (
+  ],
+  207 => [
     'link' => 'general-settings',
     'title' => 'Two-factor Authentication Method',
     'page_title' => '',
-  ),
-  208 => 
-  array (
+  ],
+  208 => [
     'link' => 'general-settings',
     'title' => 'Google Authenticator Settings',
     'page_title' => '',
-  ),
-  209 => 
-  array (
+  ],
+  209 => [
     'link' => 'general-settings',
     'title' => 'Authy Settings',
     'page_title' => '',
-  ),
-  210 => 
-  array (
+  ],
+  210 => [
     'link' => 'general-settings',
     'title' => 'Authy Token',
     'page_title' => '',
-  ),
-  211 => 
-  array (
+  ],
+  211 => [
     'link' => 'general-settings',
     'title' => 'Account Validation',
     'page_title' => '',
-  ),
-  212 => 
-  array (
+  ],
+  212 => [
     'link' => 'general-settings',
     'title' => 'Account Validation Method',
     'page_title' => '',
-  ),
-  213 => 
-  array (
+  ],
+  213 => [
     'link' => 'general-settings',
     'title' => 'reCaptcha',
     'page_title' => '',
-  ),
-  214 => 
-  array (
+  ],
+  214 => [
     'link' => 'general-settings',
     'title' => 'Recaptcha Key',
     'page_title' => '',
-  ),
-  215 => 
-  array (
+  ],
+  215 => [
     'link' => 'general-settings',
     'title' => 'Recaptcha Secret Key',
     'page_title' => '',
-  ),
-  216 => 
-  array (
+  ],
+  216 => [
     'link' => 'general-settings',
     'title' => 'Prevent Bad Login Attempts',
     'page_title' => '',
-  ),
-  217 => 
-  array (
+  ],
+  217 => [
     'link' => 'general-settings',
     'title' => 'Login Limit',
     'page_title' => '',
-  ),
-  218 => 
-  array (
+  ],
+  218 => [
     'link' => 'general-settings',
     'title' => 'Lockout Time (In Minutes)',
     'page_title' => '',
-  ),
-  219 => 
-  array (
+  ],
+  219 => [
     'link' => 'general-settings',
     'title' => 'Registration Limits',
     'page_title' => '',
-  ),
-  220 => 
-  array (
+  ],
+  220 => [
     'link' => 'general-settings',
     'title' => 'Reserved usernames System',
     'page_title' => '',
-  ),
-  221 => 
-  array (
+  ],
+  221 => [
     'link' => 'general-settings',
     'title' => 'Reserved usernames',
     'page_title' => '',
-  ),
-  222 => 
-  array (
+  ],
+  222 => [
     'link' => 'general-settings',
     'title' => 'Disable start page',
     'page_title' => '',
-  ),
-  223 => 
-  array (
+  ],
+  223 => [
     'link' => 'general-settings',
     'title' => 'E-mail Notifications ',
     'page_title' => '',
-  ),
-  224 => 
-  array (
+  ],
+  224 => [
     'link' => 'general-settings',
     'title' => 'Profile Visit Notifications ',
     'page_title' => '',
-  ),
-  225 => 
-  array (
+  ],
+  225 => [
     'link' => 'general-settings',
     'title' => 'Notification On New Post',
     'page_title' => '',
-  ),
-  226 => 
-  array (
+  ],
+  226 => [
     'link' => 'generate-sitemap',
     'title' => 'Updating*',
     'page_title' => '',
-  ),
-  227 => 
-  array (
+  ],
+  227 => [
     'link' => 'groups-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  228 => 
-  array (
+  ],
+  228 => [
     'link' => 'groups-fields',
     'title' => '',
     'page_title' => '',
-  ),
-  229 => 
-  array (
+  ],
+  229 => [
     'link' => 'groups-fields',
     'title' => 'Field Type',
     'page_title' => '',
-  ),
-  230 => 
-  array (
+  ],
+  230 => [
     'link' => 'groups-fields',
     'title' => 'Field Name',
     'page_title' => '',
-  ),
-  231 => 
-  array (
+  ],
+  231 => [
     'link' => 'groups-fields',
     'title' => 'Field Length',
     'page_title' => '',
-  ),
-  232 => 
-  array (
+  ],
+  232 => [
     'link' => 'groups-fields',
     'title' => 'Field Description',
     'page_title' => '',
-  ),
-  233 => 
-  array (
+  ],
+  233 => [
     'link' => 'groups-fields',
     'title' => 'Required Field',
     'page_title' => '',
-  ),
-  234 => 
-  array (
+  ],
+  234 => [
     'link' => 'groups-fields',
     'title' => 'Select Field Options',
     'page_title' => '',
-  ),
-  235 => 
-  array (
+  ],
+  235 => [
     'link' => 'groups-sub-categories',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  236 => 
-  array (
+  ],
+  236 => [
     'link' => 'groups-sub-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  237 => 
-  array (
+  ],
+  237 => [
     'link' => 'job-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  238 => 
-  array (
+  ],
+  238 => [
     'link' => 'live',
     'title' => 'Live Streaming',
     'page_title' => '',
-  ),
-  239 => 
-  array (
+  ],
+  239 => [
     'link' => 'live',
     'title' => 'Live Streaming Strorage',
     'page_title' => '',
-  ),
-  240 => 
-  array (
+  ],
+  240 => [
     'link' => 'live',
     'title' => 'Millicast Live Streaming',
     'page_title' => '',
-  ),
-  241 => 
-  array (
+  ],
+  241 => [
     'link' => 'live',
     'title' => 'Publishing Token',
     'page_title' => '',
-  ),
-  242 => 
-  array (
+  ],
+  242 => [
     'link' => 'live',
     'title' => 'Account ID',
     'page_title' => '',
-  ),
-  243 => 
-  array (
+  ],
+  243 => [
     'link' => 'live',
     'title' => 'Agora Live Streaming',
     'page_title' => '',
-  ),
-  244 => 
-  array (
+  ],
+  244 => [
     'link' => 'live',
     'title' => 'App ID',
     'page_title' => '',
-  ),
-  245 => 
-  array (
+  ],
+  245 => [
     'link' => 'live',
     'title' => 'App Certificate',
     'page_title' => '',
-  ),
-  246 => 
-  array (
+  ],
+  246 => [
     'link' => 'live',
     'title' => 'Customer ID',
     'page_title' => '',
-  ),
-  247 => 
-  array (
+  ],
+  247 => [
     'link' => 'live',
     'title' => 'Customer Secret',
     'page_title' => '',
-  ),
-  248 => 
-  array (
+  ],
+  248 => [
     'link' => 'live',
     'title' => 'Amazon S3 Live Streaming Storage',
     'page_title' => '',
-  ),
-  249 => 
-  array (
+  ],
+  249 => [
     'link' => 'live',
     'title' => 'Amazon Bucket Name',
     'page_title' => '',
-  ),
-  250 => 
-  array (
+  ],
+  250 => [
     'link' => 'live',
     'title' => 'Amazon S3 Key',
     'page_title' => '',
-  ),
-  251 => 
-  array (
+  ],
+  251 => [
     'link' => 'live',
     'title' => 'Amazon S3 Secret Key',
     'page_title' => '',
-  ),
-  252 => 
-  array (
+  ],
+  252 => [
     'link' => 'live',
     'title' => 'Amazon S3 bucket Region',
     'page_title' => '',
-  ),
-  253 => 
-  array (
+  ],
+  253 => [
     'link' => 'manage-announcements',
     'title' => 'Create New Announcement (HTML Allowed)',
     'page_title' => '',
-  ),
-  254 => 
-  array (
+  ],
+  254 => [
     'link' => 'manage-api-access-keys',
     'title' => 'API ID',
     'page_title' => '',
-  ),
-  255 => 
-  array (
+  ],
+  255 => [
     'link' => 'manage-api-access-keys',
     'title' => 'API Secret Key',
     'page_title' => '',
-  ),
-  256 => 
-  array (
+  ],
+  256 => [
     'link' => 'manage-api-access-keys',
     'title' => 'Server Key',
     'page_title' => '',
-  ),
-  257 => 
-  array (
+  ],
+  257 => [
     'link' => 'manage-apps',
     'title' => '
                                         Search for app
                                       ',
     'page_title' => '',
-  ),
-  258 => 
-  array (
+  ],
+  258 => [
     'link' => 'manage-apps',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  259 => 
-  array (
+  ],
+  259 => [
     'link' => 'manage-apps',
     'title' => '',
     'page_title' => '',
-  ),
-  260 => 
-  array (
+  ],
+  260 => [
     'link' => 'manage-articles',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  261 => 
-  array (
+  ],
+  261 => [
     'link' => 'manage-articles',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  262 => 
-  array (
+  ],
+  262 => [
     'link' => 'manage-articles',
     'title' => '',
     'page_title' => '',
-  ),
-  263 => 
-  array (
+  ],
+  263 => [
     'link' => 'manage-colored-posts',
     'title' => 'Hello World !!',
     'page_title' => 'Hello World !!',
-  ),
-  264 => 
-  array (
+  ],
+  264 => [
     'link' => 'manage-colored-posts',
     'title' => 'Hello World !!',
     'page_title' => 'Hello World !!',
-  ),
-  265 => 
-  array (
+  ],
+  265 => [
     'link' => 'manage-colored-posts',
     'title' => 'Color 1',
     'page_title' => 'Hello World !!',
-  ),
-  266 => 
-  array (
+  ],
+  266 => [
     'link' => 'manage-colored-posts',
     'title' => 'Color 2',
     'page_title' => 'Hello World !!',
-  ),
-  267 => 
-  array (
+  ],
+  267 => [
     'link' => 'manage-colored-posts',
     'title' => 'Text Color',
     'page_title' => 'Hello World !!',
-  ),
-  268 => 
-  array (
+  ],
+  268 => [
     'link' => 'manage-colored-posts',
     'title' => 'Image',
     'page_title' => 'Hello World !!',
-  ),
-  269 => 
-  array (
+  ],
+  269 => [
     'link' => 'manage-colored-posts',
     'title' => 'Text Color',
     'page_title' => 'Hello World !!',
-  ),
-  270 => 
-  array (
+  ],
+  270 => [
     'link' => 'manage-content-monetization',
     'title' => '
                                         Search for Title.
                                       ',
     'page_title' => '',
-  ),
-  271 => 
-  array (
+  ],
+  271 => [
     'link' => 'manage-content-monetization',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  272 => 
-  array (
+  ],
+  272 => [
     'link' => 'manage-content-monetization',
     'title' => '',
     'page_title' => '',
-  ),
-  273 => 
-  array (
+  ],
+  273 => [
     'link' => 'manage-currencies',
     'title' => 'Currency Code (e.g: USD)',
     'page_title' => '',
-  ),
-  274 => 
-  array (
+  ],
+  274 => [
     'link' => 'manage-currencies',
     'title' => 'Currency Symbol (e.g: $)',
     'page_title' => '',
-  ),
-  275 => 
-  array (
+  ],
+  275 => [
     'link' => 'manage-custom-pages',
     'title' => '',
     'page_title' => '',
-  ),
-  276 => 
-  array (
+  ],
+  276 => [
     'link' => 'manage-events',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  277 => 
-  array (
+  ],
+  277 => [
     'link' => 'manage-events',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  278 => 
-  array (
+  ],
+  278 => [
     'link' => 'manage-events',
     'title' => '',
     'page_title' => '',
-  ),
-  279 => 
-  array (
+  ],
+  279 => [
     'link' => 'manage-forum-forums',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  280 => 
-  array (
+  ],
+  280 => [
     'link' => 'manage-forum-forums',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  281 => 
-  array (
+  ],
+  281 => [
     'link' => 'manage-forum-forums',
     'title' => '',
     'page_title' => '',
-  ),
-  282 => 
-  array (
+  ],
+  282 => [
     'link' => 'manage-forum-messages',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  283 => 
-  array (
+  ],
+  283 => [
     'link' => 'manage-forum-messages',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  284 => 
-  array (
+  ],
+  284 => [
     'link' => 'manage-forum-messages',
     'title' => '',
     'page_title' => '',
-  ),
-  285 => 
-  array (
+  ],
+  285 => [
     'link' => 'manage-forum-sections',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  286 => 
-  array (
+  ],
+  286 => [
     'link' => 'manage-forum-sections',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  287 => 
-  array (
+  ],
+  287 => [
     'link' => 'manage-forum-sections',
     'title' => '',
     'page_title' => '',
-  ),
-  288 => 
-  array (
+  ],
+  288 => [
     'link' => 'manage-forum-threads',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  289 => 
-  array (
+  ],
+  289 => [
     'link' => 'manage-forum-threads',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  290 => 
-  array (
+  ],
+  290 => [
     'link' => 'manage-forum-threads',
     'title' => '',
     'page_title' => '',
-  ),
-  291 => 
-  array (
+  ],
+  291 => [
     'link' => 'manage-fund',
     'title' => 'Funding Settings',
     'page_title' => '',
-  ),
-  292 => 
-  array (
+  ],
+  292 => [
     'link' => 'manage-fund',
     'title' => 'Commission (%)',
     'page_title' => '',
-  ),
-  293 => 
-  array (
+  ],
+  293 => [
     'link' => 'manage-fund',
     'title' => '
                                         Search for post ID, post text.
                                       ',
     'page_title' => '',
-  ),
-  294 => 
-  array (
+  ],
+  294 => [
     'link' => 'manage-fund',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  295 => 
-  array (
+  ],
+  295 => [
     'link' => 'manage-fund',
     'title' => '',
     'page_title' => '',
-  ),
-  296 => 
-  array (
+  ],
+  296 => [
     'link' => 'manage-games',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  297 => 
-  array (
+  ],
+  297 => [
     'link' => 'manage-games',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  298 => 
-  array (
+  ],
+  298 => [
     'link' => 'manage-games',
     'title' => '',
     'page_title' => '',
-  ),
-  299 => 
-  array (
+  ],
+  299 => [
     'link' => 'manage-genders',
     'title' => '',
     'page_title' => '',
-  ),
-  300 => 
-  array (
+  ],
+  300 => [
     'link' => 'manage-genders',
     'title' => 'Icon',
     'page_title' => '',
-  ),
-  301 => 
-  array (
+  ],
+  301 => [
     'link' => 'manage-genders',
     'title' => 'Icon to use',
     'page_title' => '',
-  ),
-  302 => 
-  array (
+  ],
+  302 => [
     'link' => 'manage-genders',
     'title' => 'Default',
     'page_title' => '',
-  ),
-  303 => 
-  array (
+  ],
+  303 => [
     'link' => 'manage-genders',
     'title' => 'My Icon',
     'page_title' => '',
-  ),
-  304 => 
-  array (
+  ],
+  304 => [
     'link' => 'manage-genders',
     'title' => 'Icon',
     'page_title' => '',
-  ),
-  305 => 
-  array (
+  ],
+  305 => [
     'link' => 'manage-gifts',
-    'title' => '
-                                        Search for Gift
-                                      ',
+    'title' => 'Search for Gift',
     'page_title' => '',
-  ),
-  306 => 
-  array (
+  ],
+  306 => [
     'link' => 'manage-gifts',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  307 => 
-  array (
+  ],
+  307 => [
     'link' => 'manage-gifts',
     'title' => '',
     'page_title' => '',
-  ),
-  308 => 
-  array (
+  ],
+  308 => [
     'link' => 'manage-groups',
-    'title' => '
-                                        Search for group ID, group name, group  title.
+    'title' => 'Search for group ID, group name, group  title.
                                       ',
     'page_title' => '',
-  ),
-  309 => 
-  array (
+  ],
+  309 => [
     'link' => 'manage-groups',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  310 => 
-  array (
+  ],
+  310 => [
     'link' => 'manage-groups',
     'title' => '',
     'page_title' => '',
-  ),
-  311 => 
-  array (
+  ],
+  311 => [
     'link' => 'manage-invitation',
     'title' => '
                                         Search for code
                                       ',
     'page_title' => '',
-  ),
-  312 => 
-  array (
+  ],
+  312 => [
     'link' => 'manage-invitation',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  313 => 
-  array (
+  ],
+  313 => [
     'link' => 'manage-invitation',
     'title' => '',
     'page_title' => '',
-  ),
-  314 => 
-  array (
+  ],
+  314 => [
     'link' => 'manage-invitation-keys',
     'title' => '',
     'page_title' => '',
-  ),
-  315 => 
-  array (
+  ],
+  315 => [
     'link' => 'manage-jobs',
     'title' => '
                                         Search for job title, description.
                                       ',
     'page_title' => '',
-  ),
-  316 => 
-  array (
+  ],
+  316 => [
     'link' => 'manage-jobs',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  317 => 
-  array (
+  ],
+  317 => [
     'link' => 'manage-jobs',
     'title' => '',
     'page_title' => '',
-  ),
-  318 => 
-  array (
+  ],
+  318 => [
     'link' => 'manage-languages',
     'title' => '',
     'page_title' => '',
-  ),
-  319 => 
-  array (
+  ],
+  319 => [
     'link' => 'manage-movies',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  320 => 
-  array (
+  ],
+  320 => [
     'link' => 'manage-movies',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  321 => 
-  array (
+  ],
+  321 => [
     'link' => 'manage-movies',
     'title' => '',
     'page_title' => '',
-  ),
-  322 => 
-  array (
+  ],
+  322 => [
     'link' => 'manage-offers',
     'title' => '
                                         Search for offer discounted items, description.
                                       ',
     'page_title' => '',
-  ),
-  323 => 
-  array (
+  ],
+  323 => [
     'link' => 'manage-offers',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  324 => 
-  array (
+  ],
+  324 => [
     'link' => 'manage-offers',
     'title' => '',
     'page_title' => '',
-  ),
-  325 => 
-  array (
+  ],
+  325 => [
     'link' => 'manage-orders',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  326 => 
-  array (
+  ],
+  326 => [
     'link' => 'manage-orders',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  327 => 
-  array (
+  ],
+  327 => [
     'link' => 'manage-orders',
     'title' => '',
     'page_title' => '',
-  ),
-  328 => 
-  array (
+  ],
+  328 => [
     'link' => 'manage-pages',
-    'title' => '
-                                        Search for page ID, page name, page title.
-                                      ',
+    'title' => 'Search for page ID, page name, page title.                         ',
     'page_title' => '',
-  ),
-  329 => 
-  array (
+  ],
+  329 => [
     'link' => 'manage-pages',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  330 => 
-  array (
+  ],
+  330 => [
     'link' => 'manage-pages',
     'title' => '',
     'page_title' => '',
-  ),
-  331 => 
-  array (
+  ],
+  331 => [
     'link' => 'manage-posts',
     'title' => '
                                         Search for post ID, post text.
                                       ',
     'page_title' => '',
-  ),
-  332 => 
-  array (
+  ],
+  332 => [
     'link' => 'manage-posts',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  333 => 
-  array (
+  ],
+  333 => [
     'link' => 'manage-posts',
     'title' => '',
     'page_title' => '',
-  ),
-  334 => 
-  array (
+  ],
+  334 => [
     'link' => 'manage-products',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  335 => 
-  array (
+  ],
+  335 => [
     'link' => 'manage-products',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  336 => 
-  array (
+  ],
+  336 => [
     'link' => 'manage-products',
     'title' => '',
     'page_title' => '',
-  ),
-  337 => 
-  array (
+  ],
+  337 => [
     'link' => 'manage-profile-fields',
     'title' => '',
     'page_title' => '',
-  ),
-  338 => 
-  array (
+  ],
+  338 => [
     'link' => 'manage-reactions',
     'title' => 'Reaction Icon',
     'page_title' => '',
-  ),
-  339 => 
-  array (
+  ],
+  339 => [
     'link' => 'manage-reports',
     'title' => '',
     'page_title' => '',
-  ),
-  340 => 
-  array (
+  ],
+  340 => [
     'link' => 'manage-reviews',
     'title' => '
                                         Search for title, description.
                                       ',
     'page_title' => '',
-  ),
-  341 => 
-  array (
+  ],
+  341 => [
     'link' => 'manage-reviews',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  342 => 
-  array (
+  ],
+  342 => [
     'link' => 'manage-reviews',
     'title' => '',
     'page_title' => '',
-  ),
-  343 => 
-  array (
+  ],
+  343 => [
     'link' => 'manage-site-ads',
     'title' => 'Header ',
     'page_title' => '',
-  ),
-  344 => 
-  array (
+  ],
+  344 => [
     'link' => 'manage-site-ads',
     'title' => 'Sidebar',
     'page_title' => '',
-  ),
-  345 => 
-  array (
+  ],
+  345 => [
     'link' => 'manage-site-ads',
     'title' => 'Footer ',
     'page_title' => '',
-  ),
-  346 => 
-  array (
+  ],
+  346 => [
     'link' => 'manage-site-ads',
     'title' => 'Posts 1',
     'page_title' => '',
-  ),
-  347 => 
-  array (
+  ],
+  347 => [
     'link' => 'manage-site-ads',
     'title' => 'Posts 2',
     'page_title' => '',
-  ),
-  348 => 
-  array (
+  ],
+  348 => [
     'link' => 'manage-site-ads',
     'title' => 'Posts 3',
     'page_title' => '',
-  ),
-  349 => 
-  array (
+  ],
+  349 => [
     'link' => 'manage-stickers',
     'title' => '
                                         Search for Gift
                                       ',
     'page_title' => '',
-  ),
-  350 => 
-  array (
+  ],
+  350 => [
     'link' => 'manage-stickers',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  351 => 
-  array (
+  ],
+  351 => [
     'link' => 'manage-stickers',
     'title' => '',
     'page_title' => '',
-  ),
-  352 => 
-  array (
+  ],
+  352 => [
     'link' => 'manage-stories',
     'title' => '',
     'page_title' => '',
-  ),
-  353 => 
-  array (
+  ],
+  353 => [
     'link' => 'manage-third-psites',
     'title' => 'PlayTube',
     'page_title' => '',
-  ),
-  354 => 
-  array (
+  ],
+  354 => [
     'link' => 'manage-third-psites',
     'title' => 'DeepSound',
     'page_title' => '',
-  ),
-  355 => 
-  array (
+  ],
+  355 => [
     'link' => 'manage-updates',
     'title' => 'Purchase Code',
     'page_title' => '',
-  ),
-  356 => 
-  array (
+  ],
+  356 => [
     'link' => 'manage-user-ads',
     'title' => '
                                         Search for ad
                                       ',
     'page_title' => '',
-  ),
-  357 => 
-  array (
+  ],
+  357 => [
     'link' => 'manage-user-ads',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  358 => 
-  array (
+  ],
+  358 => [
     'link' => 'manage-user-ads',
     'title' => '',
     'page_title' => '',
-  ),
-  359 => 
-  array (
+  ],
+  359 => [
     'link' => 'manage-users',
     'title' => '
                                         Search for Username, E-mail, First or Last Name
                                       ',
     'page_title' => '',
-  ),
-  360 => 
-  array (
+  ],
+  360 => [
     'link' => 'manage-users',
     'title' => '
                                         Type
                                       ',
     'page_title' => '',
-  ),
-  361 => 
-  array (
+  ],
+  361 => [
     'link' => 'manage-users',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  362 => 
-  array (
+  ],
+  362 => [
     'link' => 'manage-users',
     'title' => '',
     'page_title' => '',
-  ),
-  363 => 
-  array (
+  ],
+  363 => [
     'link' => 'manage-verification-reqeusts',
     'title' => '',
     'page_title' => '',
-  ),
-  364 => 
-  array (
+  ],
+  364 => [
     'link' => 'manage_emails',
     'title' => 'Activate Account (HTML Allowed)',
     'page_title' => '',
-  ),
-  365 => 
-  array (
+  ],
+  365 => [
     'link' => 'manage_emails',
     'title' => 'Invite Email (HTML Allowed)',
     'page_title' => '',
-  ),
-  366 => 
-  array (
+  ],
+  366 => [
     'link' => 'manage_emails',
     'title' => 'Login With (HTML Allowed)',
     'page_title' => '',
-  ),
-  367 => 
-  array (
+  ],
+  367 => [
     'link' => 'manage_emails',
     'title' => 'Notification (HTML Allowed)',
     'page_title' => '',
-  ),
-  368 => 
-  array (
+  ],
+  368 => [
     'link' => 'manage_emails',
     'title' => 'Payment Declined (HTML Allowed)',
     'page_title' => '',
-  ),
-  369 => 
-  array (
+  ],
+  369 => [
     'link' => 'manage_emails',
     'title' => 'Payment Approved (HTML Allowed)',
     'page_title' => '',
-  ),
-  370 => 
-  array (
+  ],
+  370 => [
     'link' => 'manage_emails',
     'title' => 'Recover (HTML Allowed)',
     'page_title' => '',
-  ),
-  371 => 
-  array (
+  ],
+  371 => [
     'link' => 'manage_emails',
     'title' => 'Unusual Login (HTML Allowed)',
     'page_title' => '',
-  ),
-  372 => 
-  array (
+  ],
+  372 => [
     'link' => 'manage_emails',
     'title' => 'Account Deleted (HTML Allowed)',
     'page_title' => '',
-  ),
-  373 => 
-  array (
+  ],
+  373 => [
     'link' => 'mass-notifications',
     'title' => 'URL',
     'page_title' => '',
-  ),
-  374 => 
-  array (
+  ],
+  374 => [
     'link' => 'mass-notifications',
     'title' => 'Notification Text',
     'page_title' => '',
-  ),
-  375 => 
-  array (
+  ],
+  375 => [
     'link' => 'mass-notifications',
     'title' => 'Selected Users',
     'page_title' => '',
-  ),
-  376 => 
-  array (
+  ],
+  376 => [
     'link' => 'node',
     'title' => 'NodeJS',
     'page_title' => '',
-  ),
-  377 => 
-  array (
+  ],
+  377 => [
     'link' => 'node',
     'title' => 'NodeJs SSL Connection',
     'page_title' => '',
-  ),
-  378 => 
-  array (
+  ],
+  378 => [
     'link' => 'node',
     'title' => 'Live Notification Bar',
     'page_title' => '',
-  ),
-  379 => 
-  array (
+  ],
+  379 => [
     'link' => 'node',
     'title' => 'NodeJs HTTP Port',
     'page_title' => '',
-  ),
-  380 => 
-  array (
+  ],
+  380 => [
     'link' => 'node',
     'title' => 'NodeJs HTTPS (SSL) Port',
     'page_title' => '',
-  ),
-  381 => 
-  array (
+  ],
+  381 => [
     'link' => 'node',
     'title' => 'NodeJs SSL Certificate Key Path (.key)',
     'page_title' => '',
-  ),
-  382 => 
-  array (
+  ],
+  382 => [
     'link' => 'node',
     'title' => 'NodeJs SSL Certificate Path (.crt)',
     'page_title' => '',
-  ),
-  383 => 
-  array (
+  ],
+  383 => [
     'link' => 'node',
     'title' => 'Redis Server',
     'page_title' => '',
-  ),
-  384 => 
-  array (
+  ],
+  384 => [
     'link' => 'node',
     'title' => 'Redis Port',
     'page_title' => '',
-  ),
-  385 => 
-  array (
+  ],
+  385 => [
     'link' => 'online-users',
     'title' => '
                                         Search for Username, E-mail, First or Last Name
                                       ',
     'page_title' => '',
-  ),
-  386 => 
-  array (
+  ],
+  386 => [
     'link' => 'online-users',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  387 => 
-  array (
+  ],
+  387 => [
     'link' => 'online-users',
     'title' => '',
     'page_title' => '',
-  ),
-  388 => 
-  array (
+  ],
+  388 => [
     'link' => 'pages-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  389 => 
-  array (
+  ],
+  389 => [
     'link' => 'pages-fields',
     'title' => '',
     'page_title' => '',
-  ),
-  390 => 
-  array (
+  ],
+  390 => [
     'link' => 'pages-fields',
     'title' => 'Field Type',
     'page_title' => '',
-  ),
-  391 => 
-  array (
+  ],
+  391 => [
     'link' => 'pages-fields',
     'title' => 'Field Name',
     'page_title' => '',
-  ),
-  392 => 
-  array (
+  ],
+  392 => [
     'link' => 'pages-fields',
     'title' => 'Field Length',
     'page_title' => '',
-  ),
-  393 => 
-  array (
+  ],
+  393 => [
     'link' => 'pages-fields',
     'title' => 'Field Description',
     'page_title' => '',
-  ),
-  394 => 
-  array (
+  ],
+  394 => [
     'link' => 'pages-fields',
     'title' => 'Required Field ',
     'page_title' => '',
-  ),
-  395 => 
-  array (
+  ],
+  395 => [
     'link' => 'pages-fields',
     'title' => 'Select Field Options',
     'page_title' => '',
-  ),
-  396 => 
-  array (
+  ],
+  396 => [
     'link' => 'pages-sub-categories',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  397 => 
-  array (
+  ],
+  397 => [
     'link' => 'pages-sub-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  398 => 
-  array (
+  ],
+  398 => [
     'link' => 'payment-reqeuests',
     'title' => '',
     'page_title' => '',
-  ),
-  399 => 
-  array (
+  ],
+  399 => [
     'link' => 'payment-settings',
     'title' => 'Bank Transfer',
     'page_title' => '',
-  ),
-  400 => 
-  array (
+  ],
+  400 => [
     'link' => 'payment-settings',
     'title' => 'Paypal',
     'page_title' => '',
-  ),
-  401 => 
-  array (
+  ],
+  401 => [
     'link' => 'payment-settings',
     'title' => 'Skrill',
     'page_title' => '',
-  ),
-  402 => 
-  array (
+  ],
+  402 => [
     'link' => 'payment-settings',
     'title' => 'Custom Method',
     'page_title' => '',
-  ),
-  403 => 
-  array (
+  ],
+  403 => [
     'link' => 'payment-settings',
     'title' => 'Custom Method Name',
     'page_title' => '',
-  ),
-  404 => 
-  array (
+  ],
+  404 => [
     'link' => 'payment-settings',
     'title' => 'Minimum withdrawal request',
     'page_title' => '',
-  ),
-  405 => 
-  array (
+  ],
+  405 => [
     'link' => 'payment-settings',
     'title' => 'PayPal Payment Method',
     'page_title' => '',
-  ),
-  406 => 
-  array (
+  ],
+  406 => [
     'link' => 'payment-settings',
     'title' => 'Show Transaction Logs (All Payment Methods)',
     'page_title' => '',
-  ),
-  407 => 
-  array (
+  ],
+  407 => [
     'link' => 'payment-settings',
     'title' => 'PayPal Mode',
     'page_title' => '',
-  ),
-  408 => 
-  array (
+  ],
+  408 => [
     'link' => 'payment-settings',
     'title' => 'PayPal Clinet ID',
     'page_title' => '',
-  ),
-  409 => 
-  array (
+  ],
+  409 => [
     'link' => 'payment-settings',
     'title' => 'PayPal Secret Key',
     'page_title' => '',
-  ),
-  410 => 
-  array (
+  ],
+  410 => [
     'link' => 'payment-settings',
     'title' => 'PayPal Currency',
     'page_title' => '',
-  ),
-  411 => 
-  array (
+  ],
+  411 => [
     'link' => 'payment-settings',
     'title' => 'Stripe Payment Method',
     'page_title' => '',
-  ),
-  412 => 
-  array (
+  ],
+  412 => [
     'link' => 'payment-settings',
     'title' => 'Alipay Payment Method',
     'page_title' => '',
-  ),
-  413 => 
-  array (
+  ],
+  413 => [
     'link' => 'payment-settings',
     'title' => 'Stripe Currency',
     'page_title' => '',
-  ),
-  414 => 
-  array (
+  ],
+  414 => [
     'link' => 'payment-settings',
     'title' => 'Stripe API Secret Key',
     'page_title' => '',
-  ),
-  415 => 
-  array (
+  ],
+  415 => [
     'link' => 'payment-settings',
     'title' => 'Stripe Publishable Key ',
     'page_title' => '',
-  ),
-  416 => 
-  array (
+  ],
+  416 => [
     'link' => 'payment-settings',
     'title' => '2Checkout Payment Method',
     'page_title' => '',
-  ),
-  417 => 
-  array (
+  ],
+  417 => [
     'link' => 'payment-settings',
     'title' => '2Checkout Mode',
     'page_title' => '',
-  ),
-  418 => 
-  array (
+  ],
+  418 => [
     'link' => 'payment-settings',
     'title' => '2Checkout Currency',
     'page_title' => '',
-  ),
-  419 => 
-  array (
+  ],
+  419 => [
     'link' => 'payment-settings',
     'title' => 'Seller ID',
     'page_title' => '',
-  ),
-  420 => 
-  array (
+  ],
+  420 => [
     'link' => 'payment-settings',
     'title' => 'Publishable Key',
     'page_title' => '',
-  ),
-  421 => 
-  array (
+  ],
+  421 => [
     'link' => 'payment-settings',
     'title' => 'Private Key',
     'page_title' => '',
-  ),
-  422 => 
-  array (
+  ],
+  422 => [
     'link' => 'payment-settings',
     'title' => 'CashFree Payment Method',
     'page_title' => '',
-  ),
-  423 => 
-  array (
+  ],
+  423 => [
     'link' => 'payment-settings',
     'title' => 'CashFree Mode',
     'page_title' => '',
-  ),
-  424 => 
-  array (
+  ],
+  424 => [
     'link' => 'payment-settings',
     'title' => 'Client ID',
     'page_title' => '',
-  ),
-  425 => 
-  array (
+  ],
+  425 => [
     'link' => 'payment-settings',
     'title' => 'Client Secret',
     'page_title' => '',
-  ),
-  426 => 
-  array (
+  ],
+  426 => [
     'link' => 'payment-settings',
     'title' => 'Coinbase Payment Method',
     'page_title' => '',
-  ),
-  427 => 
-  array (
+  ],
+  427 => [
     'link' => 'payment-settings',
     'title' => 'API key ',
     'page_title' => '',
-  ),
-  428 => 
-  array (
+  ],
+  428 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Payment Method',
     'page_title' => '',
-  ),
-  429 => 
-  array (
+  ],
+  429 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Mode',
     'page_title' => '',
-  ),
-  430 => 
-  array (
+  ],
+  430 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Key',
     'page_title' => '',
-  ),
-  431 => 
-  array (
+  ],
+  431 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Secret Key',
     'page_title' => '',
-  ),
-  432 => 
-  array (
+  ],
+  432 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Id',
     'page_title' => '',
-  ),
-  433 => 
-  array (
+  ],
+  433 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Name',
     'page_title' => '',
-  ),
-  434 => 
-  array (
+  ],
+  434 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Surname',
     'page_title' => '',
-  ),
-  435 => 
-  array (
+  ],
+  435 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Gsm Number (+905350000000)',
     'page_title' => '',
-  ),
-  436 => 
-  array (
+  ],
+  436 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Email',
     'page_title' => '',
-  ),
-  437 => 
-  array (
+  ],
+  437 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Identity Number',
     'page_title' => '',
-  ),
-  438 => 
-  array (
+  ],
+  438 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Address',
     'page_title' => '',
-  ),
-  439 => 
-  array (
+  ],
+  439 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer City',
     'page_title' => '',
-  ),
-  440 => 
-  array (
+  ],
+  440 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Country',
     'page_title' => '',
-  ),
-  441 => 
-  array (
+  ],
+  441 => [
     'link' => 'payment-settings',
     'title' => 'Iyzipay Buyer Zip',
     'page_title' => '',
-  ),
-  442 => 
-  array (
+  ],
+  442 => [
     'link' => 'payment-settings',
     'title' => 'Fortumo Payment Method',
     'page_title' => '',
-  ),
-  443 => 
-  array (
+  ],
+  443 => [
     'link' => 'payment-settings',
     'title' => 'Fortumo Service Id',
     'page_title' => '',
-  ),
-  444 => 
-  array (
+  ],
+  444 => [
     'link' => 'payment-settings',
     'title' => 'Aamarpay Payment Method',
     'page_title' => '',
-  ),
-  445 => 
-  array (
+  ],
+  445 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  446 => 
-  array (
+  ],
+  446 => [
     'link' => 'payment-settings',
     'title' => 'Aamarpay Store Id',
     'page_title' => '',
-  ),
-  447 => 
-  array (
+  ],
+  447 => [
     'link' => 'payment-settings',
     'title' => 'Aamarpay Signature Key',
     'page_title' => '',
-  ),
-  448 => 
-  array (
+  ],
+  448 => [
     'link' => 'payment-settings',
     'title' => 'Qiwi Payment Method',
     'page_title' => '',
-  ),
-  449 => 
-  array (
+  ],
+  449 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  450 => 
-  array (
+  ],
+  450 => [
     'link' => 'payment-settings',
     'title' => 'Qiwi Merchant Id',
     'page_title' => '',
-  ),
-  451 => 
-  array (
+  ],
+  451 => [
     'link' => 'payment-settings',
     'title' => 'Qiwi Public Key',
     'page_title' => '',
-  ),
-  452 => 
-  array (
+  ],
+  452 => [
     'link' => 'payment-settings',
     'title' => 'Qiwi Private Key',
     'page_title' => '',
-  ),
-  453 => 
-  array (
+  ],
+  453 => [
     'link' => 'payment-settings',
     'title' => 'CoinPayments Payment Method',
     'page_title' => '',
-  ),
-  454 => 
-  array (
+  ],
+  454 => [
     'link' => 'payment-settings',
     'title' => 'Secret Key ',
     'page_title' => '',
-  ),
-  455 => 
-  array (
+  ],
+  455 => [
     'link' => 'payment-settings',
     'title' => 'Public Key',
     'page_title' => '',
-  ),
-  456 => 
-  array (
+  ],
+  456 => [
     'link' => 'payment-settings',
     'title' => 'Coinpayments Coins',
     'page_title' => '',
-  ),
-  457 => 
-  array (
+  ],
+  457 => [
     'link' => 'payment-settings',
     'title' => 'Bank Payment Method',
     'page_title' => '',
-  ),
-  458 => 
-  array (
+  ],
+  458 => [
     'link' => 'payment-settings',
     'title' => 'Bank Description Code',
     'page_title' => '',
-  ),
-  459 => 
-  array (
+  ],
+  459 => [
     'link' => 'payment-settings',
     'title' => 'Bank Transfer Note',
     'page_title' => '',
-  ),
-  460 => 
-  array (
+  ],
+  460 => [
     'link' => 'payment-settings',
     'title' => 'Paystack Payment Method',
     'page_title' => '',
-  ),
-  461 => 
-  array (
+  ],
+  461 => [
     'link' => 'payment-settings',
     'title' => 'Secret Key',
     'page_title' => '',
-  ),
-  462 => 
-  array (
+  ],
+  462 => [
     'link' => 'payment-settings',
     'title' => 'RazorPay Payment Method',
     'page_title' => '',
-  ),
-  463 => 
-  array (
+  ],
+  463 => [
     'link' => 'payment-settings',
     'title' => 'Application ID',
     'page_title' => '',
-  ),
-  464 => 
-  array (
+  ],
+  464 => [
     'link' => 'payment-settings',
     'title' => 'Application Secret',
     'page_title' => '',
-  ),
-  465 => 
-  array (
+  ],
+  465 => [
     'link' => 'payment-settings',
     'title' => 'PaySera Payment Method',
     'page_title' => '',
-  ),
-  466 => 
-  array (
+  ],
+  466 => [
     'link' => 'payment-settings',
     'title' => 'PaySera Mode',
     'page_title' => '',
-  ),
-  467 => 
-  array (
+  ],
+  467 => [
     'link' => 'payment-settings',
     'title' => 'Project ID',
     'page_title' => '',
-  ),
-  468 => 
-  array (
+  ],
+  468 => [
     'link' => 'payment-settings',
     'title' => 'Account Password',
     'page_title' => '',
-  ),
-  469 => 
-  array (
+  ],
+  469 => [
     'link' => 'payment-settings',
     'title' => 'Yoomoney Payment Method',
     'page_title' => '',
-  ),
-  470 => 
-  array (
+  ],
+  470 => [
     'link' => 'payment-settings',
     'title' => 'Wallet ID',
     'page_title' => '',
-  ),
-  471 => 
-  array (
+  ],
+  471 => [
     'link' => 'payment-settings',
     'title' => 'Notifications Authentication Secret',
     'page_title' => '',
-  ),
-  472 => 
-  array (
+  ],
+  472 => [
     'link' => 'payment-settings',
     'title' => 'Securionpay Payment Method',
     'page_title' => '',
-  ),
-  473 => 
-  array (
+  ],
+  473 => [
     'link' => 'payment-settings',
     'title' => 'Securionpay Public key',
     'page_title' => '',
-  ),
-  474 => 
-  array (
+  ],
+  474 => [
     'link' => 'payment-settings',
     'title' => 'Securionpay Secret key',
     'page_title' => '',
-  ),
-  475 => 
-  array (
+  ],
+  475 => [
     'link' => 'payment-settings',
     'title' => 'Authorize.Net Payment Method',
     'page_title' => '',
-  ),
-  476 => 
-  array (
+  ],
+  476 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  477 => 
-  array (
+  ],
+  477 => [
     'link' => 'payment-settings',
     'title' => 'Authorize.Net API LOGIN ID',
     'page_title' => '',
-  ),
-  478 => 
-  array (
+  ],
+  478 => [
     'link' => 'payment-settings',
     'title' => 'Authorize.Net TRANSACTION KEY',
     'page_title' => '',
-  ),
-  479 => 
-  array (
+  ],
+  479 => [
     'link' => 'payment-settings',
     'title' => 'Flutter Wave Payment Method',
     'page_title' => '',
-  ),
-  480 => 
-  array (
+  ],
+  480 => [
     'link' => 'payment-settings',
     'title' => 'Flutter Wave API Secret Key',
     'page_title' => '',
-  ),
-  481 => 
-  array (
+  ],
+  481 => [
     'link' => 'payment-settings',
     'title' => 'Flutter Wave Public Key',
     'page_title' => '',
-  ),
-  482 => 
-  array (
+  ],
+  482 => [
     'link' => 'payment-settings',
     'title' => 'Flutter Wave Encryption Key',
     'page_title' => '',
-  ),
-  483 => 
-  array (
+  ],
+  483 => [
     'link' => 'payment-settings',
     'title' => 'Ngenius Payment Method',
     'page_title' => '',
-  ),
-  484 => 
-  array (
+  ],
+  484 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  485 => 
-  array (
+  ],
+  485 => [
     'link' => 'payment-settings',
     'title' => 'Ngenius API Key',
     'page_title' => '',
-  ),
-  486 => 
-  array (
+  ],
+  486 => [
     'link' => 'payment-settings',
     'title' => 'Ngenius Outlet Id',
     'page_title' => '',
-  ),
-  487 => 
-  array (
+  ],
+  487 => [
     'link' => 'payment-settings',
     'title' => 'Braintree Payment Method',
     'page_title' => '',
-  ),
-  488 => 
-  array (
+  ],
+  488 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  489 => 
-  array (
+  ],
+  489 => [
     'link' => 'payment-settings',
     'title' => 'Braintree Merchant Id',
     'page_title' => '',
-  ),
-  490 => 
-  array (
+  ],
+  490 => [
     'link' => 'payment-settings',
     'title' => 'Braintree Public Key',
     'page_title' => '',
-  ),
-  491 => 
-  array (
+  ],
+  491 => [
     'link' => 'payment-settings',
     'title' => 'Braintree Private Key',
     'page_title' => '',
-  ),
-  492 => 
-  array (
+  ],
+  492 => [
     'link' => 'payment-settings',
     'title' => 'PayFast Payment Method',
     'page_title' => '',
-  ),
-  493 => 
-  array (
+  ],
+  493 => [
     'link' => 'payment-settings',
     'title' => 'Test mode',
     'page_title' => '',
-  ),
-  494 => 
-  array (
+  ],
+  494 => [
     'link' => 'payment-settings',
     'title' => 'PayFast Merchant Id',
     'page_title' => '',
-  ),
-  495 => 
-  array (
+  ],
+  495 => [
     'link' => 'payment-settings',
     'title' => 'PayFast Merchant Key',
     'page_title' => '',
-  ),
-  496 => 
-  array (
+  ],
+  496 => [
     'link' => 'post-settings',
     'title' => 'Twitter',
     'page_title' => '',
-  ),
-  497 => 
-  array (
+  ],
+  497 => [
     'link' => 'post-settings',
     'title' => 'Facebook',
     'page_title' => '',
-  ),
-  498 => 
-  array (
+  ],
+  498 => [
     'link' => 'post-settings',
     'title' => 'What\'s app',
     'page_title' => '',
-  ),
-  499 => 
-  array (
+  ],
+  499 => [
     'link' => 'post-settings',
     'title' => 'Pinterest',
     'page_title' => '',
-  ),
-  500 => 
-  array (
+  ],
+  500 => [
     'link' => 'post-settings',
     'title' => 'Linkedin',
     'page_title' => '',
-  ),
-  501 => 
-  array (
+  ],
+  501 => [
     'link' => 'post-settings',
     'title' => 'Telegram',
     'page_title' => '',
-  ),
-  502 => 
-  array (
+  ],
+  502 => [
     'link' => 'post-settings',
     'title' => 'Adult Images Filtration',
     'page_title' => '',
-  ),
-  503 => 
-  array (
+  ],
+  503 => [
     'link' => 'post-settings',
     'title' => 'Action For Adult Images',
     'page_title' => '',
-  ),
-  504 => 
-  array (
+  ],
+  504 => [
     'link' => 'post-settings',
     'title' => 'Vision API key',
     'page_title' => '',
-  ),
-  505 => 
-  array (
+  ],
+  505 => [
     'link' => 'post-settings',
     'title' => 'Memories System',
     'page_title' => '',
-  ),
-  506 => 
-  array (
+  ],
+  506 => [
     'link' => 'post-settings',
     'title' => 'Watermark Overlay',
     'page_title' => '',
-  ),
-  507 => 
-  array (
+  ],
+  507 => [
     'link' => 'post-settings',
     'title' => 'Shout Box System',
     'page_title' => '',
-  ),
-  508 => 
-  array (
+  ],
+  508 => [
     'link' => 'post-settings',
     'title' => 'Colored Posts',
     'page_title' => '',
-  ),
-  509 => 
-  array (
+  ],
+  509 => [
     'link' => 'post-settings',
     'title' => 'Post Approval System',
     'page_title' => '',
-  ),
-  510 => 
-  array (
+  ],
+  510 => [
     'link' => 'post-settings',
     'title' => 'Popular Posts & Comments',
     'page_title' => '',
-  ),
-  511 => 
-  array (
+  ],
+  511 => [
     'link' => 'post-settings',
     'title' => 'Comment Reports',
     'page_title' => '',
-  ),
-  512 => 
-  array (
+  ],
+  512 => [
     'link' => 'post-settings',
     'title' => 'Location',
     'page_title' => '',
-  ),
-  513 => 
-  array (
+  ],
+  513 => [
     'link' => 'post-settings',
     'title' => 'Feelings',
     'page_title' => '',
-  ),
-  514 => 
-  array (
+  ],
+  514 => [
     'link' => 'post-settings',
     'title' => 'Poll',
     'page_title' => '',
-  ),
-  515 => 
-  array (
+  ],
+  515 => [
     'link' => 'post-settings',
     'title' => 'Max Allowed Characters Length',
     'page_title' => '',
-  ),
-  516 => 
-  array (
+  ],
+  516 => [
     'link' => 'post-settings',
     'title' => 'NewsFeed Posts',
     'page_title' => '',
-  ),
-  517 => 
-  array (
+  ],
+  517 => [
     'link' => 'post-settings',
     'title' => 'Second Post Button',
     'page_title' => '',
-  ),
-  518 => 
-  array (
+  ],
+  518 => [
     'link' => 'post-settings',
     'title' => 'Post Limit Count',
     'page_title' => '',
-  ),
-  519 => 
-  array (
+  ],
+  519 => [
     'link' => 'pro-memebers',
     'title' => '
                                         Search for Username, E-mail, First or Last Name
                                       ',
     'page_title' => '',
-  ),
-  520 => 
-  array (
+  ],
+  520 => [
     'link' => 'pro-memebers',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  521 => 
-  array (
+  ],
+  521 => [
     'link' => 'pro-memebers',
     'title' => '',
     'page_title' => '',
-  ),
-  522 => 
-  array (
+  ],
+  522 => [
     'link' => 'pro-refund',
     'title' => '',
     'page_title' => '',
-  ),
-  523 => 
-  array (
+  ],
+  523 => [
     'link' => 'pro-settings',
     'title' => 'Pro System',
     'page_title' => '',
-  ),
-  524 => 
-  array (
+  ],
+  524 => [
     'link' => 'pro-settings',
     'title' => 'Recurring Payment',
     'page_title' => '',
-  ),
-  525 => 
-  array (
+  ],
+  525 => [
     'link' => 'pro-settings',
     'title' => 'Refund System',
     'page_title' => '',
-  ),
-  526 => 
-  array (
+  ],
+  526 => [
     'link' => 'pro-settings',
     'title' => 'Weekly Price (USD)',
     'page_title' => '',
-  ),
-  527 => 
-  array (
+  ],
+  527 => [
     'link' => 'pro-settings',
     'title' => 'Monthly Price (USD)',
     'page_title' => '',
-  ),
-  528 => 
-  array (
+  ],
+  528 => [
     'link' => 'pro-settings',
     'title' => 'Yearly Price (USD)',
     'page_title' => '',
-  ),
-  529 => 
-  array (
+  ],
+  529 => [
     'link' => 'pro-settings',
     'title' => 'LifeTime Price (USD)',
     'page_title' => '',
-  ),
-  530 => 
-  array (
+  ],
+  530 => [
     'link' => 'pro-settings',
     'title' => 'Pro Membership On Sign Up',
     'page_title' => '',
-  ),
-  531 => 
-  array (
+  ],
+  531 => [
     'link' => 'pro-settings',
     'title' => 'Upload System',
     'page_title' => '',
-  ),
-  532 => 
-  array (
+  ],
+  532 => [
     'link' => 'pro-settings',
     'title' => 'Video & Audio Calls',
     'page_title' => '',
-  ),
-  533 => 
-  array (
+  ],
+  533 => [
     'link' => 'pro-settings',
     'title' => 'Status',
     'page_title' => '',
-  ),
-  534 => 
-  array (
+  ],
+  534 => [
     'link' => 'pro-settings',
     'title' => 'Name',
     'page_title' => '',
-  ),
-  535 => 
-  array (
+  ],
+  535 => [
     'link' => 'pro-settings',
     'title' => 'Price',
     'page_title' => '',
-  ),
-  536 => 
-  array (
+  ],
+  536 => [
     'link' => 'pro-settings',
     'title' => 'Color',
     'page_title' => '',
-  ),
-  537 => 
-  array (
+  ],
+  537 => [
     'link' => 'pro-settings',
     'title' => 'Featured member',
     'page_title' => '',
-  ),
-  538 => 
-  array (
+  ],
+  538 => [
     'link' => 'pro-settings',
     'title' => 'See profile visitors',
     'page_title' => '',
-  ),
-  539 => 
-  array (
+  ],
+  539 => [
     'link' => 'pro-settings',
     'title' => 'Show / Hide last seen',
     'page_title' => '',
-  ),
-  540 => 
-  array (
+  ],
+  540 => [
     'link' => 'pro-settings',
     'title' => 'Verified badge',
     'page_title' => '',
-  ),
-  541 => 
-  array (
+  ],
+  541 => [
     'link' => 'pro-settings',
     'title' => 'Pages promotion',
     'page_title' => '',
-  ),
-  542 => 
-  array (
+  ],
+  542 => [
     'link' => 'pro-settings',
     'title' => 'Posts promotion',
     'page_title' => '',
-  ),
-  543 => 
-  array (
+  ],
+  543 => [
     'link' => 'pro-settings',
     'title' => 'Max Upload Size',
     'page_title' => '',
-  ),
-  544 => 
-  array (
+  ],
+  544 => [
     'link' => 'pro-settings',
     'title' => 'Discount %',
     'page_title' => '',
-  ),
-  545 => 
-  array (
+  ],
+  545 => [
     'link' => 'pro-settings',
     'title' => 'Paid Every',
     'page_title' => '',
-  ),
-  546 => 
-  array (
+  ],
+  546 => [
     'link' => 'pro-settings',
     'title' => '',
     'page_title' => '',
-  ),
-  547 => 
-  array (
+  ],
+  547 => [
     'link' => 'pro-settings',
     'title' => 'Description',
     'page_title' => '',
-  ),
-  548 => 
-  array (
+  ],
+  548 => [
     'link' => 'products-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  549 => 
-  array (
+  ],
+  549 => [
     'link' => 'products-fields',
     'title' => '',
     'page_title' => '',
-  ),
-  550 => 
-  array (
+  ],
+  550 => [
     'link' => 'products-fields',
     'title' => 'Field Type',
     'page_title' => '',
-  ),
-  551 => 
-  array (
+  ],
+  551 => [
     'link' => 'products-fields',
     'title' => 'Field Name',
     'page_title' => '',
-  ),
-  552 => 
-  array (
+  ],
+  552 => [
     'link' => 'products-fields',
     'title' => 'Field Length ',
     'page_title' => '',
-  ),
-  553 => 
-  array (
+  ],
+  553 => [
     'link' => 'products-fields',
     'title' => 'Field Description ',
     'page_title' => '',
-  ),
-  554 => 
-  array (
+  ],
+  554 => [
     'link' => 'products-fields',
     'title' => 'Required Field ',
     'page_title' => '',
-  ),
-  555 => 
-  array (
+  ],
+  555 => [
     'link' => 'products-fields',
     'title' => 'Select Field Options: ',
     'page_title' => '',
-  ),
-  556 => 
-  array (
+  ],
+  556 => [
     'link' => 'products-sub-categories',
     'title' => '&nbsp;',
     'page_title' => '',
-  ),
-  557 => 
-  array (
+  ],
+  557 => [
     'link' => 'products-sub-categories',
     'title' => '',
     'page_title' => '',
-  ),
-  558 => 
-  array (
+  ],
+  558 => [
     'link' => 'push-notifications-system',
     'title' => 'Push Notifications System',
     'page_title' => '',
-  ),
-  559 => 
-  array (
+  ],
+  559 => [
     'link' => 'push-notifications-system',
     'title' => 'Android Push Messages ',
     'page_title' => '',
-  ),
-  560 => 
-  array (
+  ],
+  560 => [
     'link' => 'push-notifications-system',
     'title' => 'IOS Push Messages (Push User Messages)',
     'page_title' => '',
-  ),
-  561 => 
-  array (
+  ],
+  561 => [
     'link' => 'push-notifications-system',
     'title' => 'Android Push Native Site Notifications',
     'page_title' => '',
-  ),
-  562 => 
-  array (
+  ],
+  562 => [
     'link' => 'push-notifications-system',
     'title' => 'IOS Push Native Site Notifications ',
     'page_title' => '',
-  ),
-  563 => 
-  array (
+  ],
+  563 => [
     'link' => 'push-notifications-system',
     'title' => 'Web Push Notifications',
     'page_title' => '',
-  ),
-  564 => 
-  array (
+  ],
+  564 => [
     'link' => 'push-notifications-system',
     'title' => 'OneSignal APP ID',
     'page_title' => '',
-  ),
-  565 => 
-  array (
+  ],
+  565 => [
     'link' => 'push-notifications-system',
     'title' => 'REST API Key',
     'page_title' => '',
-  ),
-  566 => 
-  array (
+  ],
+  566 => [
     'link' => 'push-notifications-system',
     'title' => 'OneSignal APP ID',
     'page_title' => '',
-  ),
-  567 => 
-  array (
+  ],
+  567 => [
     'link' => 'push-notifications-system',
     'title' => 'REST API Key',
     'page_title' => '',
-  ),
-  568 => 
-  array (
+  ],
+  568 => [
     'link' => 'push-notifications-system',
     'title' => 'OneSignal APP ID',
     'page_title' => '',
-  ),
-  569 => 
-  array (
+  ],
+  569 => [
     'link' => 'push-notifications-system',
     'title' => 'REST API Key',
     'page_title' => '',
-  ),
-  570 => 
-  array (
+  ],
+  570 => [
     'link' => 'push-notifications-system',
     'title' => 'OneSignal APP ID',
     'page_title' => '',
-  ),
-  571 => 
-  array (
+  ],
+  571 => [
     'link' => 'push-notifications-system',
     'title' => 'REST API Key',
     'page_title' => '',
-  ),
-  572 => 
-  array (
+  ],
+  572 => [
     'link' => 'push-notifications-system',
     'title' => 'OneSignal APP ID',
     'page_title' => '',
-  ),
-  573 => 
-  array (
+  ],
+  573 => [
     'link' => 'push-notifications-system',
     'title' => 'REST API Key',
     'page_title' => '',
-  ),
-  574 => 
-  array (
+  ],
+  574 => [
     'link' => 'send_email',
     'title' => 'Subject',
     'page_title' => '',
-  ),
-  575 => 
-  array (
+  ],
+  575 => [
     'link' => 'send_email',
     'title' => 'Message (HTML Allowed)',
     'page_title' => '',
-  ),
-  576 => 
-  array (
+  ],
+  576 => [
     'link' => 'send_email',
     'title' => 'Send E-mail To',
     'page_title' => '',
-  ),
-  577 => 
-  array (
+  ],
+  577 => [
     'link' => 'send_email',
     'title' => 'Selected Users',
     'page_title' => '',
-  ),
-  578 => 
-  array (
+  ],
+  578 => [
     'link' => 'send_email',
     'title' => 'Test Message (Send to my email first)',
     'page_title' => '',
-  ),
-  579 => 
-  array (
+  ],
+  579 => [
     'link' => 'site-features',
     'title' => 'Greeting System',
     'page_title' => '',
-  ),
-  580 => 
-  array (
+  ],
+  580 => [
     'link' => 'site-features',
     'title' => 'Poke System',
     'page_title' => '',
-  ),
-  581 => 
-  array (
+  ],
+  581 => [
     'link' => 'site-features',
     'title' => 'Games System',
     'page_title' => '',
-  ),
-  582 => 
-  array (
+  ],
+  582 => [
     'link' => 'site-features',
     'title' => 'Pages System',
     'page_title' => '',
-  ),
-  583 => 
-  array (
+  ],
+  583 => [
     'link' => 'site-features',
     'title' => 'Nearby Businesses',
     'page_title' => '',
-  ),
-  584 => 
-  array (
+  ],
+  584 => [
     'link' => 'site-features',
     'title' => 'Groups System',
     'page_title' => '',
-  ),
-  585 => 
-  array (
+  ],
+  585 => [
     'link' => 'site-features',
     'title' => 'Classified System (MarketPlace)',
     'page_title' => '',
-  ),
-  586 => 
-  array (
+  ],
+  586 => [
     'link' => 'site-features',
     'title' => 'Offer System (MarketPlace)',
     'page_title' => '',
-  ),
-  587 => 
-  array (
+  ],
+  587 => [
     'link' => 'site-features',
     'title' => 'Nearby Shops',
     'page_title' => '',
-  ),
-  588 => 
-  array (
+  ],
+  588 => [
     'link' => 'site-features',
     'title' => 'MarketPlace Visibility',
     'page_title' => '',
-  ),
-  589 => 
-  array (
+  ],
+  589 => [
     'link' => 'site-features',
     'title' => 'Blogs System',
     'page_title' => '',
-  ),
-  590 => 
-  array (
+  ],
+  590 => [
     'link' => 'site-features',
     'title' => 'Blog Approval System',
     'page_title' => '',
-  ),
-  591 => 
-  array (
+  ],
+  591 => [
     'link' => 'site-features',
     'title' => 'Who Can Post Blogs?',
     'page_title' => '',
-  ),
-  592 => 
-  array (
+  ],
+  592 => [
     'link' => 'site-features',
     'title' => 'Events System',
     'page_title' => '',
-  ),
-  593 => 
-  array (
+  ],
+  593 => [
     'link' => 'site-features',
     'title' => 'Events Visibility',
     'page_title' => '',
-  ),
-  594 => 
-  array (
+  ],
+  594 => [
     'link' => 'site-features',
     'title' => 'Forums System',
     'page_title' => '',
-  ),
-  595 => 
-  array (
+  ],
+  595 => [
     'link' => 'site-features',
     'title' => 'Forums Visibility',
     'page_title' => '',
-  ),
-  596 => 
-  array (
+  ],
+  596 => [
     'link' => 'site-features',
     'title' => 'Movies System',
     'page_title' => '',
-  ),
-  597 => 
-  array (
+  ],
+  597 => [
     'link' => 'site-features',
     'title' => 'Story / Status System',
     'page_title' => '',
-  ),
-  598 => 
-  array (
+  ],
+  598 => [
     'link' => 'site-features',
     'title' => 'GIF System',
     'page_title' => '',
-  ),
-  599 => 
-  array (
+  ],
+  599 => [
     'link' => 'site-features',
     'title' => 'Stickers System',
     'page_title' => '',
-  ),
-  600 => 
-  array (
+  ],
+  600 => [
     'link' => 'site-features',
     'title' => 'Nearby Friends System',
     'page_title' => '',
-  ),
-  601 => 
-  array (
+  ],
+  601 => [
     'link' => 'site-features',
     'title' => 'GIFT System',
     'page_title' => '',
-  ),
-  602 => 
-  array (
+  ],
+  602 => [
     'link' => 'site-features',
     'title' => 'Jobs System',
     'page_title' => '',
-  ),
-  603 => 
-  array (
+  ],
+  603 => [
     'link' => 'site-features',
     'title' => 'Watch Page',
     'page_title' => '',
-  ),
-  604 => 
-  array (
+  ],
+  604 => [
     'link' => 'site-features',
     'title' => 'Post Monetization',
     'page_title' => '',
-  ),
-  605 => 
-  array (
+  ],
+  605 => [
     'link' => 'site-features',
     'title' => 'Monetization Earn Percentage',
     'page_title' => '',
-  ),
-  606 => 
-  array (
+  ],
+  606 => [
     'link' => 'site-features',
     'title' => 'Directory System',
     'page_title' => '',
-  ),
-  607 => 
-  array (
+  ],
+  607 => [
     'link' => 'site-features',
     'title' => 'Common Things Page',
     'page_title' => '',
-  ),
-  608 => 
-  array (
+  ],
+  608 => [
     'link' => 'site-features',
     'title' => 'Weather Widget',
     'page_title' => '',
-  ),
-  609 => 
-  array (
+  ],
+  609 => [
     'link' => 'site-features',
     'title' => 'Weather APP ID',
     'page_title' => '',
-  ),
-  610 => 
-  array (
+  ],
+  610 => [
     'link' => 'site-features',
     'title' => 'Weather Widget',
     'page_title' => '',
-  ),
-  611 => 
-  array (
+  ],
+  611 => [
     'link' => 'site-features',
     'title' => 'Enabled',
     'page_title' => '',
-  ),
-  612 => 
-  array (
+  ],
+  612 => [
     'link' => 'site-features',
     'title' => 'Disabled',
     'page_title' => '',
-  ),
-  613 => 
-  array (
+  ],
+  613 => [
     'link' => 'site-features',
     'title' => 'Openweathermap Weather App Id',
     'page_title' => '',
-  ),
-  614 => 
-  array (
+  ],
+  614 => [
     'link' => 'site-features',
     'title' => 'Yahoo Weather Consumer Key',
     'page_title' => '',
-  ),
-  615 => 
-  array (
+  ],
+  615 => [
     'link' => 'site-features',
     'title' => 'Yahoo Weather Consumer Secret',
     'page_title' => '',
-  ),
-  616 => 
-  array (
+  ],
+  616 => [
     'link' => 'site-features',
     'title' => 'Points & Level System',
     'page_title' => '',
-  ),
-  617 => 
-  array (
+  ],
+  617 => [
     'link' => 'site-features',
     'title' => 'Withdrawal Earned Points',
     'page_title' => '',
-  ),
-  618 => 
-  array (
+  ],
+  618 => [
     'link' => 'site-features',
     'title' => '$1.00 = ? Point',
     'page_title' => '',
-  ),
-  619 => 
-  array (
+  ],
+  619 => [
     'link' => 'site-features',
     'title' => 'Free User Daily Limit',
     'page_title' => '',
-  ),
-  620 => 
-  array (
+  ],
+  620 => [
     'link' => 'site-features',
     'title' => 'Pro User Daily Limit',
     'page_title' => '',
-  ),
-  621 => 
-  array (
+  ],
+  621 => [
     'link' => 'site-features',
     'title' => 'Comments',
     'page_title' => '',
-  ),
-  622 => 
-  array (
+  ],
+  622 => [
     'link' => 'site-features',
     'title' => 'Likes',
     'page_title' => '',
-  ),
-  623 => 
-  array (
+  ],
+  623 => [
     'link' => 'site-features',
     'title' => 'DisLikes',
     'page_title' => '',
-  ),
-  624 => 
-  array (
+  ],
+  624 => [
     'link' => 'site-features',
     'title' => 'Wonders',
     'page_title' => '',
-  ),
-  625 => 
-  array (
+  ],
+  625 => [
     'link' => 'site-features',
     'title' => 'Reaction',
     'page_title' => '',
-  ),
-  626 => 
-  array (
+  ],
+  626 => [
     'link' => 'site-features',
     'title' => 'Create New Post',
     'page_title' => '',
-  ),
-  627 => 
-  array (
+  ],
+  627 => [
     'link' => 'site-features',
     'title' => 'Create A Blog',
     'page_title' => '',
-  ),
-  628 => 
-  array (
+  ],
+  628 => [
     'link' => 'site-features',
     'title' => 'AdMob',
     'page_title' => '',
-  ),
-  629 => 
-  array (
+  ],
+  629 => [
     'link' => 'site-settings',
     'title' => 'Website Title',
     'page_title' => '',
-  ),
-  630 => 
-  array (
+  ],
+  630 => [
     'link' => 'site-settings',
     'title' => 'Website Name',
     'page_title' => '',
-  ),
-  631 => 
-  array (
+  ],
+  631 => [
     'link' => 'site-settings',
     'title' => 'Website Keywords',
     'page_title' => '',
-  ),
-  632 => 
-  array (
+  ],
+  632 => [
     'link' => 'site-settings',
     'title' => 'Website Description',
     'page_title' => '',
-  ),
-  633 => 
-  array (
+  ],
+  633 => [
     'link' => 'site-settings',
     'title' => 'Website Logo',
     'page_title' => '',
-  ),
-  634 => 
-  array (
+  ],
+  634 => [
     'link' => 'site-settings',
     'title' => 'Google Analytics Code',
     'page_title' => '',
-  ),
-  635 => 
-  array (
+  ],
+  635 => [
     'link' => 'site-settings',
     'title' => 'Google Maps',
     'page_title' => '',
-  ),
-  636 => 
-  array (
+  ],
+  636 => [
     'link' => 'site-settings',
     'title' => 'Google Map API',
     'page_title' => '',
-  ),
-  637 => 
-  array (
+  ],
+  637 => [
     'link' => 'site-settings',
     'title' => 'Yandex Maps',
     'page_title' => '',
-  ),
-  638 => 
-  array (
+  ],
+  638 => [
     'link' => 'site-settings',
     'title' => 'Yandex Map API key',
     'page_title' => '',
-  ),
-  639 => 
-  array (
+  ],
+  639 => [
     'link' => 'site-settings',
     'title' => 'Yandex Translation API',
     'page_title' => '',
-  ),
-  640 => 
-  array (
+  ],
+  640 => [
     'link' => 'site-settings',
     'title' => 'Yandex Translation API Key',
     'page_title' => '',
-  ),
-  641 => 
-  array (
+  ],
+  641 => [
     'link' => 'site-settings',
     'title' => 'Google Translation API',
     'page_title' => '',
-  ),
-  642 => 
-  array (
+  ],
+  642 => [
     'link' => 'site-settings',
     'title' => 'Google Translation API Key',
     'page_title' => '',
-  ),
-  643 => 
-  array (
+  ],
+  643 => [
     'link' => 'site-settings',
     'title' => 'Youtube API Key',
     'page_title' => '',
-  ),
-  644 => 
-  array (
+  ],
+  644 => [
     'link' => 'site-settings',
     'title' => 'Giphy API',
     'page_title' => '',
-  ),
-  645 => 
-  array (
+  ],
+  645 => [
     'link' => 'social-login',
     'title' => 'Facebook Login',
     'page_title' => '',
-  ),
-  646 => 
-  array (
+  ],
+  646 => [
     'link' => 'social-login',
     'title' => 'Vkontakte Login',
     'page_title' => '',
-  ),
-  647 => 
-  array (
+  ],
+  647 => [
     'link' => 'social-login',
     'title' => 'Google Login',
     'page_title' => '',
-  ),
-  648 => 
-  array (
+  ],
+  648 => [
     'link' => 'social-login',
     'title' => 'Twitter Login',
     'page_title' => '',
-  ),
-  649 => 
-  array (
+  ],
+  649 => [
     'link' => 'social-login',
     'title' => 'Linkedin Login',
     'page_title' => '',
-  ),
-  650 => 
-  array (
+  ],
+  650 => [
     'link' => 'social-login',
     'title' => 'Instagram Login',
     'page_title' => '',
-  ),
-  651 => 
-  array (
+  ],
+  651 => [
     'link' => 'social-login',
     'title' => 'QQ Login',
     'page_title' => '',
-  ),
-  652 => 
-  array (
+  ],
+  652 => [
     'link' => 'social-login',
     'title' => 'WeChat Login',
     'page_title' => '',
-  ),
-  653 => 
-  array (
+  ],
+  653 => [
     'link' => 'social-login',
     'title' => 'Discord Login',
     'page_title' => '',
-  ),
-  654 => 
-  array (
+  ],
+  654 => [
     'link' => 'social-login',
     'title' => 'Mailru Login',
     'page_title' => '',
-  ),
-  655 => 
-  array (
+  ],
+  655 => [
     'link' => 'social-login',
     'title' => 'ok.ru Login',
     'page_title' => '',
-  ),
-  656 => 
-  array (
+  ],
+  656 => [
     'link' => 'social-login',
     'title' => 'TikTok Login',
     'page_title' => '',
-  ),
-  657 => 
-  array (
+  ],
+  657 => [
     'link' => 'social-login',
     'title' => 'Wordpress Login',
     'page_title' => '',
-  ),
-  658 => 
-  array (
+  ],
+  658 => [
     'link' => 'social-login',
     'title' => 'Facebook Configuration',
     'page_title' => '',
-  ),
-  659 => 
-  array (
+  ],
+  659 => [
     'link' => 'social-login',
     'title' => 'Google Configuration',
     'page_title' => '',
-  ),
-  660 => 
-  array (
+  ],
+  660 => [
     'link' => 'social-login',
     'title' => 'Twitter Configuration',
     'page_title' => '',
-  ),
-  661 => 
-  array (
+  ],
+  661 => [
     'link' => 'social-login',
     'title' => 'LinkedIn Configuration',
     'page_title' => '',
-  ),
-  662 => 
-  array (
+  ],
+  662 => [
     'link' => 'social-login',
     'title' => 'Vkontakte Configuration',
     'page_title' => '',
-  ),
-  663 => 
-  array (
+  ],
+  663 => [
     'link' => 'social-login',
     'title' => 'Instagram Configuration',
     'page_title' => '',
-  ),
-  664 => 
-  array (
+  ],
+  664 => [
     'link' => 'social-login',
     'title' => 'QQ Configuration',
     'page_title' => '',
-  ),
-  665 => 
-  array (
+  ],
+  665 => [
     'link' => 'social-login',
     'title' => 'WeChat Configuration',
     'page_title' => '',
-  ),
-  666 => 
-  array (
+  ],
+  666 => [
     'link' => 'social-login',
     'title' => 'Discord Configuration',
     'page_title' => '',
-  ),
-  667 => 
-  array (
+  ],
+  667 => [
     'link' => 'social-login',
     'title' => 'Mailru Configuration',
     'page_title' => '',
-  ),
-  668 => 
-  array (
+  ],
+  668 => [
     'link' => 'social-login',
     'title' => 'ok.ru Configuration',
     'page_title' => '',
-  ),
-  669 => 
-  array (
+  ],
+  669 => [
     'link' => 'social-login',
     'title' => 'TikTok Configuration',
     'page_title' => '',
-  ),
-  670 => 
-  array (
+  ],
+  670 => [
     'link' => 'social-login',
     'title' => 'Wordpress Configuration',
     'page_title' => '',
-  ),
-  671 => 
-  array (
+  ],
+  671 => [
     'link' => 'store-settings',
     'title' => 'Store System',
     'page_title' => '',
-  ),
-  672 => 
-  array (
+  ],
+  672 => [
     'link' => 'store-settings',
     'title' => 'Review Products',
     'page_title' => '',
-  ),
-  673 => 
-  array (
+  ],
+  673 => [
     'link' => 'store-settings',
     'title' => 'Sales Commission',
     'page_title' => '',
-  ),
-  674 => 
-  array (
+  ],
+  674 => [
     'link' => 'user_reports',
     'title' => '',
     'page_title' => '',
-  ),
-  675 => 
-  array (
+  ],
+  675 => [
     'link' => 'verfiy-applications',
     'title' => 'Android Messenger Verification Code',
     'page_title' => '',
-  ),
-  676 => 
-  array (
+  ],
+  676 => [
     'link' => 'verfiy-applications',
     'title' => 'IOS Messenger Verification Code',
     'page_title' => '',
-  ),
-  677 => 
-  array (
+  ],
+  677 => [
     'link' => 'verfiy-applications',
     'title' => 'Windows Desktop Verification Code',
     'page_title' => '',
-  ),
-  678 => 
-  array (
+  ],
+  678 => [
     'link' => 'verfiy-applications',
     'title' => 'Android Timeline Verification Code',
     'page_title' => '',
-  ),
-  679 => 
-  array (
+  ],
+  679 => [
     'link' => 'video-settings',
     'title' => 'Chat System ',
     'page_title' => '',
-  ),
-  680 => 
-  array (
+  ],
+  680 => [
     'link' => 'video-settings',
     'title' => 'Message Seen Alert',
     'page_title' => '',
-  ),
-  681 => 
-  array (
+  ],
+  681 => [
     'link' => 'video-settings',
     'title' => 'User Typing System',
     'page_title' => '',
-  ),
-  682 => 
-  array (
+  ],
+  682 => [
     'link' => 'video-settings',
     'title' => 'Agora Video Calls',
     'page_title' => '',
-  ),
-  683 => 
-  array (
+  ],
+  683 => [
     'link' => 'video-settings',
     'title' => 'App ID',
     'page_title' => '',
-  ),
-  684 => 
-  array (
+  ],
+  684 => [
     'link' => 'video-settings',
     'title' => 'App Certificate',
     'page_title' => '',
-  ),
-  685 => 
-  array (
+  ],
+  685 => [
     'link' => 'video-settings',
     'title' => 'Customer ID',
     'page_title' => '',
-  ),
-  686 => 
-  array (
+  ],
+  686 => [
     'link' => 'video-settings',
     'title' => 'Customer Secret',
     'page_title' => '',
-  ),
-  687 => 
-  array (
+  ],
+  687 => [
     'link' => 'video-settings',
     'title' => 'Video Calls ',
     'page_title' => '',
-  ),
-  688 => 
-  array (
+  ],
+  688 => [
     'link' => 'video-settings',
     'title' => 'Audio Calls ',
     'page_title' => '',
-  ),
-  689 => 
-  array (
+  ],
+  689 => [
     'link' => 'video-settings',
     'title' => 'Twilio Video / Audio Calls',
     'page_title' => '',
-  ),
-  690 => 
-  array (
+  ],
+  690 => [
     'link' => 'video-settings',
     'title' => 'Live accountSid',
     'page_title' => '',
-  ),
-  691 => 
-  array (
+  ],
+  691 => [
     'link' => 'video-settings',
     'title' => 'apiKeySid',
     'page_title' => '',
-  ),
-  692 => 
-  array (
+  ],
+  692 => [
     'link' => 'video-settings',
     'title' => 'apiKeySecret',
     'page_title' => '',
-  ),
-  693 => 
-  array (
+  ],
+  693 => [
     'link' => 'website_mode',
     'title' => 'WoWonder Default (Facebook) Mode',
     'page_title' => '',
-  ),
-  694 => 
-  array (
+  ],
+  694 => [
     'link' => 'website_mode',
     'title' => 'Linkedin (Jobs) Mode',
     'page_title' => '',
-  ),
-  695 => 
-  array (
+  ],
+  695 => [
     'link' => 'website_mode',
     'title' => 'Instagram Mode',
     'page_title' => '',
-  ),
-  696 => 
-  array (
+  ],
+  696 => [
     'link' => 'website_mode',
     'title' => 'X (Twitter) Mode',
     'page_title' => '',
-  ),
-  697 => 
-  array (
+  ],
+  697 => [
     'link' => 'website_mode',
     'title' => 'Askfm Mode',
     'page_title' => '',
-  ),
-  698 => 
-  array (
+  ],
+  698 => [
     'link' => 'website_mode',
     'title' => 'TikTok Mode',
     'page_title' => '',
-  ),
-);
+  ],
+];

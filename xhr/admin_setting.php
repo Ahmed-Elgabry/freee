@@ -3518,6 +3518,9 @@ if ($f == 'admin_setting' AND (Wo_IsAdmin() || Wo_IsModerator())) {
                 if ($key == 'smtp_password') {
                     $value = openssl_encrypt($value, "AES-128-ECB", 'mysecretkey1234');
                 }
+                if ($key == 'smtp_password') {
+                    $value = openssl_encrypt($value, "AES-128-ECB", 'mysecretkey1234');
+                }
                 // if ($key == 'two_factor_type' && $wo['config']['two_factor_type'] != $value) {
                 //     $db->where('two_factor_verified',1)->update(T_USERS,array('two_factor_email_verified' => 0,
                 //                                                               'two_factor'          => 0));

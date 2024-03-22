@@ -254,8 +254,8 @@ $db->where('recipient_id',0)->where('admin',1)->where('seen',0)->where('type','r
                           if ($fetched_data['post_id'] != 0) {
                               $fetched_data['reporter'] = Wo_UserData($fetched_data['user_id']);
                               $fetched_data['story']    = Wo_PostData($fetched_data['post_id']);
-                              $fetched_data['type']     = 'post';
-                          }
+                              $fetched_data['type'] = ($fetched_data['is_reel'] == 1) ? 'reel' : 'post';
+                            }
                           else if($fetched_data['profile_id'] != 0){
                               $fetched_data['reporter'] = Wo_UserData($fetched_data['user_id']);
                               $fetched_data['user']     = Wo_UserData($fetched_data['profile_id']);
